@@ -11777,7 +11777,7 @@ The above example then becomes</p><pre><code class="programlisting nix">home.ses
 may be useful when overriding.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-lazy attribute set of (null or string or absolute path or signed integer or floating point number)</p>
+lazy attribute set of (null or string or absolute path or signed integer or floating point number or boolean)</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
 </code></pre>
@@ -15047,8 +15047,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -15075,8 +15075,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -20084,6 +20084,538 @@ null or one of “opengl”, “angle”, “software”, “metal”, “vulkan
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.antigravity.enable"></a><a class="term" href="options.xhtml#opt-programs.antigravity.enable"><code class="option">programs.antigravity.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Antigravity.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.package"></a><a class="term" href="options.xhtml#opt-programs.antigravity.package"><code class="option">programs.antigravity.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The antigravity package to use. Version of Antigravity to install.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.antigravity
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.argvSettings"></a><a class="term" href="options.xhtml#opt-programs.antigravity.argvSettings"><code class="option">programs.antigravity.argvSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Antigravity’s
+<code class="filename">argv.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  enable-crash-reporter = false;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.mutableExtensionsDir"></a><a class="term" href="options.xhtml#opt-programs.antigravity.mutableExtensionsDir"><code class="option">programs.antigravity.mutableExtensionsDir</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether extensions can be installed or updated manually
+or by Antigravity. Mutually exclusive to
+programs.antigravity.profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">(removeAttrs config.programs.antigravity.profiles [ &quot;default&quot; ]) == { }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles"><code class="option">programs.antigravity.profiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A list of all Antigravity profiles. Mutually exclusive
+to programs.antigravity.mutableExtensionsDir</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.enableExtensionUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.enableExtensionUpdateCheck"><code class="option">programs.antigravity.profiles.&lt;name&gt;.enableExtensionUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update notifications for extensions.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.enableMcpIntegration"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.enableMcpIntegration"><code class="option">programs.antigravity.profiles.&lt;name&gt;.enableMcpIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to integrate the MCP servers config from
+<code class="option">programs.mcp.servers</code> into
+<code class="option">programs.antigravity.profiles.&lt;name&gt;.userMcp</code>.</p><p>Note: Settings defined in <code class="option">programs.mcp.servers</code> are merged
+with <code class="option">programs.antigravity.profiles.&lt;name&gt;.userMcp</code>, with Antigravity
+settings taking precedence.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.enableUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.enableUpdateCheck"><code class="option">programs.antigravity.profiles.&lt;name&gt;.enableUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update checks/notifications.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.extensions"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.extensions"><code class="option">programs.antigravity.profiles.&lt;name&gt;.extensions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The extensions Antigravity should be started with.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[ pkgs.vscode-extensions.bbenoist.nix ]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.globalSnippets"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.globalSnippets"><code class="option">programs.antigravity.profiles.&lt;name&gt;.globalSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines global user snippets.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  fixme = {
+    body = [
+      &quot;$LINE_COMMENT FIXME: $0&quot;
+    ];
+    description = &quot;Insert a FIXME remark&quot;;
+    prefix = [
+      &quot;fixme&quot;
+    ];
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.keybindings"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.keybindings"><code class="option">programs.antigravity.profiles.&lt;name&gt;.keybindings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Keybindings written to Antigravity’s
+<code class="filename">keybindings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or list of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  {
+    key = &quot;ctrl+c&quot;;
+    command = &quot;editor.action.clipboardCopyAction&quot;;
+    when = &quot;textInputFocus&quot;;
+  }
+]
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.keybindings._.args"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.keybindings._.args"><code class="option">programs.antigravity.profiles.&lt;name&gt;.keybindings.*.args</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional arguments for a command.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  direction = &quot;up&quot;;
+}
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.keybindings._.command"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.keybindings._.command"><code class="option">programs.antigravity.profiles.&lt;name&gt;.keybindings.*.command</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The VS Code command to execute.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;editor.action.clipboardCopyAction&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.keybindings._.key"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.keybindings._.key"><code class="option">programs.antigravity.profiles.&lt;name&gt;.keybindings.*.key</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The key or key-combination to bind.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;ctrl+c&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.keybindings._.when"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.keybindings._.when"><code class="option">programs.antigravity.profiles.&lt;name&gt;.keybindings.*.when</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional context filter.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;textInputFocus&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.languageSnippets"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.languageSnippets"><code class="option">programs.antigravity.profiles.&lt;name&gt;.languageSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines user snippets for different languages.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  haskell = {
+    fixme = {
+      body = [
+        &quot;$LINE_COMMENT FIXME: $0&quot;
+      ];
+      description = &quot;Insert a FIXME remark&quot;;
+      prefix = [
+        &quot;fixme&quot;
+      ];
+    };
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.userMcp"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.userMcp"><code class="option">programs.antigravity.profiles.&lt;name&gt;.userMcp</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Antigravity’s
+<code class="filename">mcp.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;servers&quot;: {
+    &quot;Github&quot;: {
+      &quot;url&quot;: &quot;https://api.githubcopilot.com/mcp/&quot;
+    }
+  }
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.userSettings"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.userSettings"><code class="option">programs.antigravity.profiles.&lt;name&gt;.userSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Antigravity’s
+<code class="filename">settings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;files.autoSave&quot; = &quot;off&quot;;
+  &quot;[nix]&quot;.&quot;editor.tabSize&quot; = 2;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.antigravity.profiles._name_.userTasks"></a><a class="term" href="options.xhtml#opt-programs.antigravity.profiles._name_.userTasks"><code class="option">programs.antigravity.profiles.&lt;name&gt;.userTasks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Antigravity’s
+<code class="filename">tasks.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  version = &quot;2.0.0&quot;;
+  tasks = [
+    {
+      type = &quot;shell&quot;;
+      label = &quot;Hello task&quot;;
+      command = &quot;hello&quot;;
+    }
+  ];
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/antigravity.nix" target="_top">
+&lt;home-manager/modules/programs/antigravity.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.anup.enable"></a><a class="term" href="options.xhtml#opt-programs.anup.enable"><code class="option">programs.anup.enable</code>
   </a>
  </span>
@@ -23698,7 +24230,7 @@ strings concatenated with “\n”</p>
 may be useful when overriding.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-lazy attribute set of (null or string or absolute path or signed integer or floating point number)</p>
+lazy attribute set of (null or string or absolute path or signed integer or floating point number or boolean)</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
 </code></pre>
@@ -28447,7 +28979,10 @@ skill directory name, and the value is either:</p><div class="itemizedlist"><ul 
 skill name, each containing a <code class="filename">SKILL.md</code>. Each top-level
 skill entry is symlinked into <code class="filename">&lt;skills-dir&gt;/</code>, leaving
 <code class="filename">&lt;skills-dir&gt;/</code> itself as a normal directory so unmanaged
-skills can coexist.</p><p>The skills target directory depends on Codex version:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p><code class="filename">~/.agents/skills</code> for Codex &gt;= 0.94.0</p></li><li class="listitem"><p><code class="filename">~/.codex/skills</code> for older versions</p></li></ul></div>
+skills can coexist.</p><p>Home Manager manages skills under <code class="filename">CODEX_HOME/skills</code>
+(typically <code class="filename">~/.codex/skills</code>, or
+<code class="filename">~/.config/codex/skills</code> when
+<code class="option">home.preferXdgDirectories</code> is enabled).</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 (attribute set of (strings concatenated with “\n” or absolute path)) or absolute path</p>
@@ -28848,6 +29383,538 @@ JSON value</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.cursor.enable"></a><a class="term" href="options.xhtml#opt-programs.cursor.enable"><code class="option">programs.cursor.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Cursor.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.package"></a><a class="term" href="options.xhtml#opt-programs.cursor.package"><code class="option">programs.cursor.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The code-cursor package to use. Version of Cursor to install.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.code-cursor
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.argvSettings"></a><a class="term" href="options.xhtml#opt-programs.cursor.argvSettings"><code class="option">programs.cursor.argvSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Cursor’s
+<code class="filename">argv.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  enable-crash-reporter = false;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.mutableExtensionsDir"></a><a class="term" href="options.xhtml#opt-programs.cursor.mutableExtensionsDir"><code class="option">programs.cursor.mutableExtensionsDir</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether extensions can be installed or updated manually
+or by Cursor. Mutually exclusive to
+programs.cursor.profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">(removeAttrs config.programs.cursor.profiles [ &quot;default&quot; ]) == { }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles"><code class="option">programs.cursor.profiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A list of all Cursor profiles. Mutually exclusive
+to programs.cursor.mutableExtensionsDir</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.enableExtensionUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.enableExtensionUpdateCheck"><code class="option">programs.cursor.profiles.&lt;name&gt;.enableExtensionUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update notifications for extensions.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.enableMcpIntegration"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.enableMcpIntegration"><code class="option">programs.cursor.profiles.&lt;name&gt;.enableMcpIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to integrate the MCP servers config from
+<code class="option">programs.mcp.servers</code> into
+<code class="option">programs.cursor.profiles.&lt;name&gt;.userMcp</code>.</p><p>Note: Settings defined in <code class="option">programs.mcp.servers</code> are merged
+with <code class="option">programs.cursor.profiles.&lt;name&gt;.userMcp</code>, with Cursor
+settings taking precedence.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.enableUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.enableUpdateCheck"><code class="option">programs.cursor.profiles.&lt;name&gt;.enableUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update checks/notifications.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.extensions"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.extensions"><code class="option">programs.cursor.profiles.&lt;name&gt;.extensions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The extensions Cursor should be started with.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[ pkgs.vscode-extensions.bbenoist.nix ]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.globalSnippets"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.globalSnippets"><code class="option">programs.cursor.profiles.&lt;name&gt;.globalSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines global user snippets.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  fixme = {
+    body = [
+      &quot;$LINE_COMMENT FIXME: $0&quot;
+    ];
+    description = &quot;Insert a FIXME remark&quot;;
+    prefix = [
+      &quot;fixme&quot;
+    ];
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.keybindings"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.keybindings"><code class="option">programs.cursor.profiles.&lt;name&gt;.keybindings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Keybindings written to Cursor’s
+<code class="filename">keybindings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or list of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  {
+    key = &quot;ctrl+c&quot;;
+    command = &quot;editor.action.clipboardCopyAction&quot;;
+    when = &quot;textInputFocus&quot;;
+  }
+]
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.keybindings._.args"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.keybindings._.args"><code class="option">programs.cursor.profiles.&lt;name&gt;.keybindings.*.args</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional arguments for a command.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  direction = &quot;up&quot;;
+}
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.keybindings._.command"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.keybindings._.command"><code class="option">programs.cursor.profiles.&lt;name&gt;.keybindings.*.command</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The VS Code command to execute.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;editor.action.clipboardCopyAction&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.keybindings._.key"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.keybindings._.key"><code class="option">programs.cursor.profiles.&lt;name&gt;.keybindings.*.key</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The key or key-combination to bind.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;ctrl+c&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.keybindings._.when"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.keybindings._.when"><code class="option">programs.cursor.profiles.&lt;name&gt;.keybindings.*.when</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional context filter.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;textInputFocus&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.languageSnippets"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.languageSnippets"><code class="option">programs.cursor.profiles.&lt;name&gt;.languageSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines user snippets for different languages.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  haskell = {
+    fixme = {
+      body = [
+        &quot;$LINE_COMMENT FIXME: $0&quot;
+      ];
+      description = &quot;Insert a FIXME remark&quot;;
+      prefix = [
+        &quot;fixme&quot;
+      ];
+    };
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.userMcp"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.userMcp"><code class="option">programs.cursor.profiles.&lt;name&gt;.userMcp</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Cursor’s
+<code class="filename">mcp.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;servers&quot;: {
+    &quot;Github&quot;: {
+      &quot;url&quot;: &quot;https://api.githubcopilot.com/mcp/&quot;
+    }
+  }
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.userSettings"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.userSettings"><code class="option">programs.cursor.profiles.&lt;name&gt;.userSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Cursor’s
+<code class="filename">settings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;files.autoSave&quot; = &quot;off&quot;;
+  &quot;[nix]&quot;.&quot;editor.tabSize&quot; = 2;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.cursor.profiles._name_.userTasks"></a><a class="term" href="options.xhtml#opt-programs.cursor.profiles._name_.userTasks"><code class="option">programs.cursor.profiles.&lt;name&gt;.userTasks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Cursor’s
+<code class="filename">tasks.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  version = &quot;2.0.0&quot;;
+  tasks = [
+    {
+      type = &quot;shell&quot;;
+      label = &quot;Hello task&quot;;
+      command = &quot;hello&quot;;
+    }
+  ];
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/cursor.nix" target="_top">
+&lt;home-manager/modules/programs/cursor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.darcs.enable"></a><a class="term" href="options.xhtml#opt-programs.darcs.enable"><code class="option">programs.darcs.enable</code>
   </a>
  </span>
@@ -29134,8 +30201,8 @@ boolean</p>
 </dt>
 <dd>
 <p>Whether to enable git integration for delta.</p><p>When enabled, delta will be configured as git’s pager for
-<span class="command"><strong>diff</strong></span>, <span class="command"><strong>log</strong></span>, and <span class="command"><strong>show</strong></span>, and as git’s diff
-filter for interactive staging.</p>
+<span class="command"><strong>blame</strong></span>, <span class="command"><strong>diff</strong></span>, <span class="command"><strong>log</strong></span>, and <span class="command"><strong>show</strong></span>,
+and as git’s diff filter for interactive staging.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -33232,8 +34299,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -33260,8 +34327,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -33886,8 +34953,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -33914,8 +34981,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -34608,8 +35675,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -34636,8 +35703,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -36773,8 +37840,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -36801,8 +37868,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -37427,8 +38494,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -37455,8 +38522,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38149,8 +39216,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38177,8 +39244,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38554,6 +39621,35 @@ boolean</p>
 </code></pre>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/foot.nix" target="_top">
+&lt;home-manager/modules/programs/foot.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.foot.server.systemdTarget"></a><a class="term" href="options.xhtml#opt-programs.foot.server.systemdTarget"><code class="option">programs.foot.server.systemdTarget</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The systemd target that will automatically start the Foot server service.</p><p>When setting this value to <code class="literal">&quot;sway-session.target&quot;</code>,
+make sure to also enable <code class="option">wayland.windowManager.sway.systemd.enable</code>,
+otherwise the service may never be started.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">config.wayland.systemd.target
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;sway-session.target&quot;
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -41730,6 +42826,379 @@ package</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/git-worktree-switcher.nix" target="_top">
 &lt;home-manager/modules/programs/git-worktree-switcher.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.enable"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.enable"><code class="option">programs.github-copilot-cli.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable GitHub Copilot CLI.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.enableMcpIntegration"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.enableMcpIntegration"><code class="option">programs.github-copilot-cli.enableMcpIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to integrate the MCP servers config from
+<code class="option">programs.mcp.servers</code> into
+<code class="option">programs.github-copilot-cli.mcpServers</code>.</p><p>Servers defined in <code class="option">programs.mcp.servers</code> are merged with
+<code class="option">programs.github-copilot-cli.mcpServers</code>, with the latter
+taking precedence. Disabled servers (where <code class="literal">disabled = true</code>) are
+excluded from the generated configuration.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.package"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.package"><code class="option">programs.github-copilot-cli.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The github-copilot-cli package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.github-copilot-cli
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.agents"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.agents"><code class="option">programs.github-copilot-cli.agents</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Custom agents for GitHub Copilot CLI.</p><p>This option can either be:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>An attribute set defining agents</p></li><li class="listitem"><p>A path to a directory containing multiple agent files</p></li></ul></div><p>If an attribute set is used, the attribute name becomes the agent
+filename, and the value is either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>Inline content as a string (creates
+<code class="filename">${configDir}/agents/&lt;name&gt;.agent.md</code>)</p></li><li class="listitem"><p>A path to a file (creates
+<code class="filename">${configDir}/agents/&lt;name&gt;.agent.md</code>)</p></li></ul></div><p>If a path is used, it is expected to contain agent files. The directory
+is symlinked to <code class="filename">${configDir}/agents/</code>.</p><p>See <a class="link" href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#custom-agents-reference"  target="_top">https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#custom-agents-reference</a>
+for the documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+(attribute set of (strings concatenated with “\n” or absolute path or string)) or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  code-reviewer = &#x27;&#x27;
+    ---
+    description: High signal code review for logic, security, and test gaps.
+    tools: [&quot;*&quot;]
+    ---
+
+    Review the current changes and report only actionable findings.
+  &#x27;&#x27;;
+  documentation = ./agents/documentation.agent.md;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.configDir"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.configDir"><code class="option">programs.github-copilot-cli.configDir</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Directory holding Copilot CLI configuration files such as
+<code class="filename">config.json</code>, <code class="filename">mcp-config.json</code>,
+<code class="filename">lsp-config.json</code>, and
+<code class="filename">copilot-instructions.md</code>.</p><p>Defaults to <code class="literal">${config.xdg.configHome}/copilot</code> when
+<code class="option">home.preferXdgDirectories</code> is enabled and to <code class="literal">~/.copilot</code>
+otherwise. The <code class="envar">COPILOT_HOME</code> environment variable is exported
+automatically whenever the directory differs from the upstream
+default of <code class="literal">~/.copilot</code>.</p><p>See <a class="link" href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference#changing-the-location-of-the-configuration-directory"  target="_top">https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference#changing-the-location-of-the-configuration-directory</a>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">if config.home.preferXdgDirectories then
+  &quot;${config.xdg.configHome}/copilot&quot;
+else
+  &quot;${config.home.homeDirectory}/.copilot&quot;
+
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;${config.xdg.configHome}/copilot&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.context"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.context"><code class="option">programs.github-copilot-cli.context</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Global instructions for GitHub Copilot CLI.</p><p>The value is either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>Inline content as a string</p></li><li class="listitem"><p>A path to a file containing the content</p></li></ul></div><p>The configured content is written to
+<code class="filename">copilot-instructions.md</code> inside
+<code class="option">programs.github-copilot-cli.configDir</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+strings concatenated with “\n” or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">&quot;&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&#x27;&#x27;
+  Review the current workspace before making edits.
+  Prefer actionable findings over general commentary.
+&#x27;&#x27;
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.lspServers"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.lspServers"><code class="option">programs.github-copilot-cli.lspServers</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>LSP (Language Server Protocol) server configurations written to
+<code class="filename">lsp-config.json</code> inside
+<code class="option">programs.github-copilot-cli.configDir</code>.</p><p>Each attribute defines a server entry under <code class="literal">lspServers</code> in the config
+file. Supported fields include:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p><code class="literal">command</code> — command used to start the LSP server</p></li><li class="listitem"><p><code class="literal">args</code> — arguments passed to the command</p></li><li class="listitem"><p><code class="literal">fileExtensions</code> — map of file extensions to language IDs</p></li><li class="listitem"><p><code class="literal">env</code> — environment variables for the server process</p></li><li class="listitem"><p><code class="literal">rootUri</code> — server root directory relative to the Git root</p></li><li class="listitem"><p><code class="literal">initializationOptions</code> — custom startup options</p></li><li class="listitem"><p><code class="literal">requestTimeoutMs</code> — request timeout in milliseconds</p></li></ul></div><p>Language server packages are not installed automatically. Add them to
+<code class="option">home.packages</code> when needed.</p><p>See <a class="link" href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-lsp-servers"  target="_top">https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-lsp-servers</a>
+for the documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (JSON value)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  typescript = {
+    command = &quot;typescript-language-server&quot;;
+    args = [ &quot;--stdio&quot; ];
+    fileExtensions = {
+      &quot;.ts&quot; = &quot;typescript&quot;;
+      &quot;.tsx&quot; = &quot;typescriptreact&quot;;
+      &quot;.js&quot; = &quot;javascript&quot;;
+      &quot;.jsx&quot; = &quot;javascriptreact&quot;;
+    };
+  };
+  python = {
+    command = lib.getExe&#x27; pkgs.pyright &quot;pyright-langserver&quot;;
+    args = [ &quot;--stdio&quot; ];
+    fileExtensions = {
+      &quot;.py&quot; = &quot;python&quot;;
+      &quot;.pyw&quot; = &quot;python&quot;;
+      &quot;.pyi&quot; = &quot;python&quot;;
+    };
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.mcpServers"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.mcpServers"><code class="option">programs.github-copilot-cli.mcpServers</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>MCP server configurations written to <code class="filename">mcp-config.json</code> inside
+<code class="option">programs.github-copilot-cli.configDir</code>.</p><p>Each attribute defines a server entry under <code class="literal">mcpServers</code> in the config
+file. Supported server types:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p><code class="literal">local</code> — starts a local process via stdio (<code class="literal">command</code>, optional <code class="literal">args</code>, <code class="literal">env</code>)</p></li><li class="listitem"><p><code class="literal">http</code> — connects to a remote HTTP server (<code class="literal">url</code>, optional <code class="literal">headers</code>)</p></li><li class="listitem"><p><code class="literal">sse</code> — legacy HTTP with Server-Sent Events (same structure as <code class="literal">http</code>)</p></li></ul></div><p>The <code class="literal">tools</code> field accepts <code class="literal">[&quot;*&quot;]</code> to enable all tools or a list of
+specific tool names.</p><p>See <a class="link" href="https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers"  target="_top">https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers</a>
+for the documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (JSON value)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  playwright = {
+    type = &quot;local&quot;;
+    command = &quot;npx&quot;;
+    args = [ &quot;@playwright/mcp@latest&quot; ];
+    tools = [ &quot;*&quot; ];
+  };
+  context7 = {
+    type = &quot;http&quot;;
+    url = &quot;https://mcp.context7.com/mcp&quot;;
+    headers = { CONTEXT7_API_KEY = &quot;YOUR-API-KEY&quot;; };
+    tools = [ &quot;*&quot; ];
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.settings"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.settings"><code class="option">programs.github-copilot-cli.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to <code class="filename">config.json</code> inside
+<code class="option">programs.github-copilot-cli.configDir</code>.</p><p>Known configuration keys include:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p><code class="literal">model</code> — AI model selection</p></li><li class="listitem"><p><code class="literal">effortLevel</code> — reasoning effort for capable models</p></li><li class="listitem"><p><code class="literal">theme</code> — <code class="literal">&quot;default&quot;</code>, <code class="literal">&quot;dim&quot;</code>, <code class="literal">&quot;high-contrast&quot;</code>, or <code class="literal">&quot;colorblind&quot;</code></p></li><li class="listitem"><p><code class="literal">mouse</code> — enable mouse support (default: <code class="literal">true</code>)</p></li><li class="listitem"><p><code class="literal">banner</code> — frequency of animated banner display</p></li><li class="listitem"><p><code class="literal">renderMarkdown</code> — markdown rendering toggle (default: <code class="literal">true</code>)</p></li><li class="listitem"><p><code class="literal">screenReader</code> — accessibility optimizations (default: <code class="literal">false</code>)</p></li><li class="listitem"><p><code class="literal">autoUpdate</code> — automatic CLI updates (default: <code class="literal">true</code>)</p></li><li class="listitem"><p><code class="literal">stream</code> — token-by-token response streaming (default: <code class="literal">true</code>)</p></li><li class="listitem"><p><code class="literal">includeCoAuthoredBy</code> — agent commit attribution (default: <code class="literal">true</code>)</p></li><li class="listitem"><p><code class="literal">respectGitignore</code> — exclude gitignored files from file picker</p></li><li class="listitem"><p><code class="literal">trusted_folders</code> — list of pre-approved directory paths</p></li><li class="listitem"><p><code class="literal">allowed_urls</code>, <code class="literal">denied_urls</code> — URL allowlists/blocklists</p></li><li class="listitem"><p><code class="literal">logLevel</code> — log verbosity</p></li><li class="listitem"><p><code class="literal">disableAllHooks</code> — global hook disable toggle</p></li><li class="listitem"><p><code class="literal">hooks</code> — inline hook definitions</p></li><li class="listitem"><p><code class="literal">enabledFeatureFlags</code> — enable or disable specific feature flags</p></li></ul></div><p>See <a class="link" href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference"  target="_top">https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-config-dir-reference</a>
+for the documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (JSON value)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  model = &quot;claude-sonnet-4-5&quot;;
+  theme = &quot;default&quot;;
+  trusted_folders = [ &quot;/home/user/projects&quot; ];
+  renderMarkdown = true;
+  autoUpdate = false;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.github-copilot-cli.skills"></a><a class="term" href="options.xhtml#opt-programs.github-copilot-cli.skills"><code class="option">programs.github-copilot-cli.skills</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Custom skills for GitHub Copilot CLI.</p><p>This option can be either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>An attribute set defining skills</p></li><li class="listitem"><p>A path to a directory containing skill folders</p></li></ul></div><p>If an attribute set is used, the attribute name becomes the skill
+directory name, and the value is either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>Inline content as a string (creates
+<code class="filename">${configDir}/skills/&lt;name&gt;/SKILL.md</code>)</p></li><li class="listitem"><p>A path to a file (creates
+<code class="filename">${configDir}/skills/&lt;name&gt;/SKILL.md</code>)</p></li><li class="listitem"><p>A path to a directory (symlinks
+<code class="filename">${configDir}/skills/&lt;name&gt;/</code> to that directory)</p></li></ul></div><p>If a path is used, it is expected to contain one folder per skill name,
+each containing a <code class="filename">SKILL.md</code>. The directory is symlinked to
+<code class="filename">${configDir}/skills/</code>.</p><p>See <a class="link" href="https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#skills-reference"  target="_top">https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference#skills-reference</a>
+for the documentation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+(attribute set of (strings concatenated with “\n” or absolute path or string)) or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  data-analysis = ./skills/data-analysis;
+  release-notes = &#x27;&#x27;
+    ---
+    name: release-notes
+    description: Draft release notes from commits and pull requests.
+    ---
+
+    Summarize user-visible changes and call out migrations.
+  &#x27;&#x27;;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/github-copilot-cli.nix" target="_top">
+&lt;home-manager/modules/programs/github-copilot-cli.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -52006,6 +53475,538 @@ TOML value</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.kiro.enable"></a><a class="term" href="options.xhtml#opt-programs.kiro.enable"><code class="option">programs.kiro.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Kiro.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.package"></a><a class="term" href="options.xhtml#opt-programs.kiro.package"><code class="option">programs.kiro.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The kiro package to use. Version of Kiro to install.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.kiro
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.argvSettings"></a><a class="term" href="options.xhtml#opt-programs.kiro.argvSettings"><code class="option">programs.kiro.argvSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Kiro’s
+<code class="filename">argv.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  enable-crash-reporter = false;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.mutableExtensionsDir"></a><a class="term" href="options.xhtml#opt-programs.kiro.mutableExtensionsDir"><code class="option">programs.kiro.mutableExtensionsDir</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether extensions can be installed or updated manually
+or by Kiro. Mutually exclusive to
+programs.kiro.profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">(removeAttrs config.programs.kiro.profiles [ &quot;default&quot; ]) == { }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles"><code class="option">programs.kiro.profiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A list of all Kiro profiles. Mutually exclusive
+to programs.kiro.mutableExtensionsDir</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.enableExtensionUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.enableExtensionUpdateCheck"><code class="option">programs.kiro.profiles.&lt;name&gt;.enableExtensionUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update notifications for extensions.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.enableMcpIntegration"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.enableMcpIntegration"><code class="option">programs.kiro.profiles.&lt;name&gt;.enableMcpIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to integrate the MCP servers config from
+<code class="option">programs.mcp.servers</code> into
+<code class="option">programs.kiro.profiles.&lt;name&gt;.userMcp</code>.</p><p>Note: Settings defined in <code class="option">programs.mcp.servers</code> are merged
+with <code class="option">programs.kiro.profiles.&lt;name&gt;.userMcp</code>, with Kiro
+settings taking precedence.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.enableUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.enableUpdateCheck"><code class="option">programs.kiro.profiles.&lt;name&gt;.enableUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update checks/notifications.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.extensions"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.extensions"><code class="option">programs.kiro.profiles.&lt;name&gt;.extensions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The extensions Kiro should be started with.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[ pkgs.vscode-extensions.bbenoist.nix ]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.globalSnippets"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.globalSnippets"><code class="option">programs.kiro.profiles.&lt;name&gt;.globalSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines global user snippets.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  fixme = {
+    body = [
+      &quot;$LINE_COMMENT FIXME: $0&quot;
+    ];
+    description = &quot;Insert a FIXME remark&quot;;
+    prefix = [
+      &quot;fixme&quot;
+    ];
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.keybindings"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.keybindings"><code class="option">programs.kiro.profiles.&lt;name&gt;.keybindings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Keybindings written to Kiro’s
+<code class="filename">keybindings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or list of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  {
+    key = &quot;ctrl+c&quot;;
+    command = &quot;editor.action.clipboardCopyAction&quot;;
+    when = &quot;textInputFocus&quot;;
+  }
+]
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.keybindings._.args"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.keybindings._.args"><code class="option">programs.kiro.profiles.&lt;name&gt;.keybindings.*.args</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional arguments for a command.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  direction = &quot;up&quot;;
+}
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.keybindings._.command"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.keybindings._.command"><code class="option">programs.kiro.profiles.&lt;name&gt;.keybindings.*.command</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The VS Code command to execute.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;editor.action.clipboardCopyAction&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.keybindings._.key"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.keybindings._.key"><code class="option">programs.kiro.profiles.&lt;name&gt;.keybindings.*.key</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The key or key-combination to bind.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;ctrl+c&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.keybindings._.when"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.keybindings._.when"><code class="option">programs.kiro.profiles.&lt;name&gt;.keybindings.*.when</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional context filter.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;textInputFocus&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.languageSnippets"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.languageSnippets"><code class="option">programs.kiro.profiles.&lt;name&gt;.languageSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines user snippets for different languages.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  haskell = {
+    fixme = {
+      body = [
+        &quot;$LINE_COMMENT FIXME: $0&quot;
+      ];
+      description = &quot;Insert a FIXME remark&quot;;
+      prefix = [
+        &quot;fixme&quot;
+      ];
+    };
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.userMcp"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.userMcp"><code class="option">programs.kiro.profiles.&lt;name&gt;.userMcp</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Kiro’s
+<code class="filename">mcp.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;servers&quot;: {
+    &quot;Github&quot;: {
+      &quot;url&quot;: &quot;https://api.githubcopilot.com/mcp/&quot;
+    }
+  }
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.userSettings"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.userSettings"><code class="option">programs.kiro.profiles.&lt;name&gt;.userSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Kiro’s
+<code class="filename">settings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;files.autoSave&quot; = &quot;off&quot;;
+  &quot;[nix]&quot;.&quot;editor.tabSize&quot; = 2;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.kiro.profiles._name_.userTasks"></a><a class="term" href="options.xhtml#opt-programs.kiro.profiles._name_.userTasks"><code class="option">programs.kiro.profiles.&lt;name&gt;.userTasks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Kiro’s
+<code class="filename">tasks.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  version = &quot;2.0.0&quot;;
+  tasks = [
+    {
+      type = &quot;shell&quot;;
+      label = &quot;Hello task&quot;;
+      command = &quot;hello&quot;;
+    }
+  ];
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/kiro.nix" target="_top">
+&lt;home-manager/modules/programs/kiro.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.kitty.enable"></a><a class="term" href="options.xhtml#opt-programs.kitty.enable"><code class="option">programs.kitty.enable</code>
   </a>
  </span>
@@ -55218,8 +57219,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -55246,8 +57247,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -55872,8 +57873,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -55900,8 +57901,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -56594,8 +58595,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -56622,8 +58623,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -59032,6 +61033,30 @@ null or string</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.macchina.themes._name_.palette.spacing"></a><a class="term" href="options.xhtml#opt-programs.macchina.themes._name_.palette.spacing"><code class="option">programs.macchina.themes.&lt;name&gt;.palette.spacing</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The amount of spacing to leave between each glyph.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or signed integer</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macchina" target="_top">
+&lt;home-manager/modules/programs/macchina&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.macchina.themes._name_.palette.type"></a><a class="term" href="options.xhtml#opt-programs.macchina.themes._name_.palette.type"><code class="option">programs.macchina.themes.&lt;name&gt;.palette.type</code>
   </a>
  </span>
@@ -59295,8 +61320,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man.nix" target="_top">
-&lt;home-manager/modules/programs/man.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man" target="_top">
+&lt;home-manager/modules/programs/man&gt;
 </a></code>
 </td></tr>
 </table>
@@ -59313,45 +61338,22 @@ boolean</p>
 <p><span class="emphasis"><em>Type:</em></span>
 null or package</p>
 
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">if pkgs.stdenv.isDarwin &amp;&amp; lib.versionAtLeast config.home.stateVersion &quot;26.05&quot; then null else pkgs.man
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">if pkgs.stdenv.isDarwin &amp;&amp; lib.versionAtLeast config.home.stateVersion &quot;26.05&quot; then
+  null
+else if cfg.man-db.enable then
+  pkgs.man
+else if cfg.mandoc.enable then
+  pkgs.mandoc
+else
+  null;
 
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man.nix" target="_top">
-&lt;home-manager/modules/programs/man.nix&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.man.extraConfig"></a><a class="term" href="options.xhtml#opt-programs.man.extraConfig"><code class="option">programs.man.extraConfig</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Additional fields to be added to the end of the user manpath config file.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-strings concatenated with “\n”</p>
-
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">&quot;&quot;
-</code></pre>
-
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&#x27;&#x27;
-  MANDATORY_MANPATH /usr/man
-  SECTION 1 n l 8 3 0 2 3type 5 4 9 6 7
-&#x27;&#x27;
-</code></pre>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man.nix" target="_top">
-&lt;home-manager/modules/programs/man.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man" target="_top">
+&lt;home-manager/modules/programs/man&gt;
 </a></code>
 </td></tr>
 </table>
@@ -59379,8 +61381,92 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man.nix" target="_top">
-&lt;home-manager/modules/programs/man.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man" target="_top">
+&lt;home-manager/modules/programs/man&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.man.man-db.enable"></a><a class="term" href="options.xhtml#opt-programs.man.man-db.enable"><code class="option">programs.man.man-db.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable man-db as the man page viewer.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man/man-db.nix" target="_top">
+&lt;home-manager/modules/programs/man/man-db.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.man.man-db.extraConfig"></a><a class="term" href="options.xhtml#opt-programs.man.man-db.extraConfig"><code class="option">programs.man.man-db.extraConfig</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Additional fields to be added to the end of the user manpath config file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+strings concatenated with “\n”</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">&quot;&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&#x27;&#x27;
+  MANDATORY_MANPATH /usr/man
+  SECTION 1 n l 8 3 0 2 3type 5 4 9 6 7
+&#x27;&#x27;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man/man-db.nix" target="_top">
+&lt;home-manager/modules/programs/man/man-db.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.man.mandoc.enable"></a><a class="term" href="options.xhtml#opt-programs.man.mandoc.enable"><code class="option">programs.man.mandoc.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable mandoc as the man page viewer.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/man/mandoc.nix" target="_top">
+&lt;home-manager/modules/programs/man/mandoc.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63647,8 +65733,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63671,8 +65757,8 @@ package</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63695,8 +65781,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63722,8 +65808,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63746,8 +65832,8 @@ package</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63770,8 +65856,8 @@ strings concatenated with “\n”</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63821,8 +65907,8 @@ JSON value</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63847,8 +65933,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63876,8 +65962,8 @@ strings concatenated with “\n”</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63906,8 +65992,8 @@ function that evaluates to a(n) list of package</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63930,8 +66016,8 @@ string</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63957,8 +66043,8 @@ list of package</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -63987,8 +66073,8 @@ function that evaluates to a(n) list of package</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64026,8 +66112,8 @@ list of string</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64047,8 +66133,8 @@ package <span class="emphasis"><em>(read only)</em></span></p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64068,8 +66154,8 @@ strings concatenated with “\n” <span class="emphasis"><em>(read only)</em></
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64106,8 +66192,8 @@ attribute set of strings concatenated with “\n” <span class="emphasis"><em>(
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64138,8 +66224,8 @@ in
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64174,8 +66260,8 @@ list of (package or (submodule))</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64439,8 +66525,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64463,8 +66549,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64487,8 +66573,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64511,8 +66597,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64535,8 +66621,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64560,8 +66646,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64585,8 +66671,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64611,8 +66697,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -64636,8 +66722,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim.nix" target="_top">
-&lt;home-manager/modules/programs/neovim.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/neovim" target="_top">
+&lt;home-manager/modules/programs/neovim&gt;
 </a></code>
 </td></tr>
 </table>
@@ -76609,7 +78695,7 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>Whether to enable automatic mounting.</p>
+<p>Whether to enable automatically mounting the remote on login.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -76636,11 +78722,10 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>Set the log-level.
-See: https://rclone.org/docs/#logging</p>
+<p>Set the log level. See <a class="link" href="https://rclone.org/docs/#logging"  target="_top">https://rclone.org/docs/#logging</a> for more.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-null or one of “ERROR”, “NOTICE”, “INFO”, “DEBUG”</p>
+one of &lt;null&gt;, “ERROR”, “NOTICE”, “INFO”, “DEBUG”</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
 </code></pre>
@@ -76691,8 +78776,8 @@ string</p>
  </span>
 </dt>
 <dd>
-<p>An attribute set of option values passed to <code class="literal">rclone mount</code>. To set
-a boolean option, assign it <code class="literal">true</code> or <code class="literal">false</code>. See
+<p>An attribute set of option values passed to the command.
+To set a boolean option, assign it <code class="literal">true</code> or <code class="literal">false</code>. See
 <a class="link" href="https://nixos.org/manual/nixpkgs/stable/#function-library-lib.cli.toCommandLineShellGNU"  target="_top">https://nixos.org/manual/nixpkgs/stable/#function-library-lib.cli.toCommandLineShellGNU</a>
 for more details on the format.</p><p>Some caching options are set by default, namely <code class="literal">vfs-cache-mode = &quot;full&quot;</code>
 and <code class="literal">cache-dir</code>. These can be overridden if desired.</p>
@@ -76735,6 +78820,184 @@ attribute set of string</p>
   password = &quot;/run/secrets/password&quot;;
   api_key = config.age.secrets.api-key.path;
 }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.serve"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.serve"><code class="option">programs.rclone.remotes.&lt;name&gt;.serve</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>An attribute set mapping remote file paths to their corresponding serve configurations.</p><p>For each entry, to perform the equivalent of
+<code class="literal">rclone serve protocol remote:path/to/files</code> — as described in the
+rclone documentation <a class="link" href="https://rclone.org/commands/rclone_serve/"  target="_top">https://rclone.org/commands/rclone_serve/</a> — we create
+a key-value pair like this:
+<code class="literal">&quot;path/to/files/on/remote&quot; = { ... }</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;path/to/files&quot; = {
+    enable = true;
+    protocol = &quot;http&quot;;
+    options = {
+      addr = &quot;127.0.0.1:3000&quot;;
+      dir-cache-time = &quot;5000h&quot;;
+      poll-interval = &quot;10s&quot;;
+      umask = &quot;002&quot;;
+      user-agent = &quot;Laptop&quot;;
+    };
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.serve._name_.enable"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.serve._name_.enable"><code class="option">programs.rclone.remotes.&lt;name&gt;.serve.&lt;name&gt;.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable serving this path.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.serve._name_.autoStart"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.serve._name_.autoStart"><code class="option">programs.rclone.remotes.&lt;name&gt;.serve.&lt;name&gt;.autoStart</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable automatically serving the remote on login.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.serve._name_.logLevel"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.serve._name_.logLevel"><code class="option">programs.rclone.remotes.&lt;name&gt;.serve.&lt;name&gt;.logLevel</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Set the log level. See <a class="link" href="https://rclone.org/docs/#logging"  target="_top">https://rclone.org/docs/#logging</a> for more.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+one of &lt;null&gt;, “ERROR”, “NOTICE”, “INFO”, “DEBUG”</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;INFO&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.serve._name_.options"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.serve._name_.options"><code class="option">programs.rclone.remotes.&lt;name&gt;.serve.&lt;name&gt;.options</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>An attribute set of option values passed to the command.
+To set a boolean option, assign it <code class="literal">true</code> or <code class="literal">false</code>. See
+<a class="link" href="https://nixos.org/manual/nixpkgs/stable/#function-library-lib.cli.toCommandLineShellGNU"  target="_top">https://nixos.org/manual/nixpkgs/stable/#function-library-lib.cli.toCommandLineShellGNU</a>
+for more details on the format.</p><p>Some caching options are set by default, namely <code class="literal">vfs-cache-mode = &quot;full&quot;</code>
+and <code class="literal">cache-dir</code>. These can be overridden if desired.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (null or boolean or signed integer or floating point number or string)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/rclone.nix" target="_top">
+&lt;home-manager/modules/programs/rclone.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.rclone.remotes._name_.serve._name_.protocol"></a><a class="term" href="options.xhtml#opt-programs.rclone.remotes._name_.serve._name_.protocol"><code class="option">programs.rclone.remotes.&lt;name&gt;.serve.&lt;name&gt;.protocol</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The protocol to use when serving this path.
+See <a class="link" href="https://rclone.org/commands/rclone_serve"  target="_top">https://rclone.org/commands/rclone_serve</a> for more.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+one of “dlna”, “docker”, “ftp”, “http”, “nfs”, “restic”, “s3”, “sftp”, “webdav”</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;http&quot;
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -88413,8 +90676,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -88441,8 +90704,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/whrsqnr6cimrjym384f4v8h081s41ngj-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -93022,9 +95285,6 @@ null or package</p>
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.vscode
 </code></pre>
 
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">pkgs.vscodium
-</code></pre>
-
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
@@ -93055,33 +95315,6 @@ absolute path or JSON value</p>
   enable-crash-reporter = false;
 }
 
-</code></pre>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode" target="_top">
-&lt;home-manager/modules/programs/vscode&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.vscode.dataFolderName"></a><a class="term" href="options.xhtml#opt-programs.vscode.dataFolderName"><code class="option">programs.vscode.dataFolderName</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Override for extensions directory.</p><p>This should match the <code class="literal">dataFolderName</code> field in the package’s product.json. If <code class="literal">null</code>, then searches common locations for a product.json and uses the value from there.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-string</p>
-
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">&quot;(derived from product.json)&quot;
-</code></pre>
-
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;.cool-vscode&quot;
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -93208,71 +95441,12 @@ boolean</p>
 </dd>
 <dt>
  <span class="term">
- <a id="opt-programs.vscode.nameShort"></a><a class="term" href="options.xhtml#opt-programs.vscode.nameShort"><code class="option">programs.vscode.nameShort</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Override for package “short name”, used for generating configuration.</p><p>This should match the <code class="literal">shortName</code> field in the package’s product.json. If <code class="literal">null</code>, then searches common locations for a product.json and uses the value from there.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-string</p>
-
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">&quot;(derived from product.json)&quot;
-</code></pre>
-
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;MyCoolVSCodeFork&quot;
-</code></pre>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode" target="_top">
-&lt;home-manager/modules/programs/vscode&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.vscode.pname"></a><a class="term" href="options.xhtml#opt-programs.vscode.pname"><code class="option">programs.vscode.pname</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>The package name (pname) of the VS Code variant being used.
-Required when <code class="option">programs.vscode.package</code> is set to
-<code class="literal">null</code>, so that <code class="option">programs.vscode.nameShort</code> and
-<code class="option">programs.vscode.dataFolderName</code> can be derived from
-known products. Has no effect when
-<code class="option">programs.vscode.package</code> is set.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-null or string</p>
-
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
-</code></pre>
-
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;vscode&quot;
-</code></pre>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode" target="_top">
-&lt;home-manager/modules/programs/vscode&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
  <a id="opt-programs.vscode.profiles"></a><a class="term" href="options.xhtml#opt-programs.vscode.profiles"><code class="option">programs.vscode.profiles</code>
   </a>
  </span>
 </dt>
 <dd>
-<p>A list of all VSCode profiles. Mutually exclusive
+<p>A list of all Visual Studio Code profiles. Mutually exclusive
 to programs.vscode.mutableExtensionsDir</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
@@ -93326,7 +95500,7 @@ null or boolean</p>
 <p>Whether to integrate the MCP servers config from
 <code class="option">programs.mcp.servers</code> into
 <code class="option">programs.vscode.profiles.&lt;name&gt;.userMcp</code>.</p><p>Note: Settings defined in <code class="option">programs.mcp.servers</code> are merged
-with <code class="option">programs.vscode.profiles.&lt;name&gt;.userMcp</code>, with VSCode
+with <code class="option">programs.vscode.profiles.&lt;name&gt;.userMcp</code>, with Visual Studio Code
 settings taking precedence.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
@@ -93681,6 +95855,538 @@ absolute path or JSON value</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode" target="_top">
 &lt;home-manager/modules/programs/vscode&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.enable"></a><a class="term" href="options.xhtml#opt-programs.vscodium.enable"><code class="option">programs.vscodium.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable VSCodium.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.package"></a><a class="term" href="options.xhtml#opt-programs.vscodium.package"><code class="option">programs.vscodium.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The vscodium package to use. Version of VSCodium to install.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.vscodium
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.argvSettings"></a><a class="term" href="options.xhtml#opt-programs.vscodium.argvSettings"><code class="option">programs.vscodium.argvSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to VSCodium’s
+<code class="filename">argv.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  enable-crash-reporter = false;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.mutableExtensionsDir"></a><a class="term" href="options.xhtml#opt-programs.vscodium.mutableExtensionsDir"><code class="option">programs.vscodium.mutableExtensionsDir</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether extensions can be installed or updated manually
+or by VSCodium. Mutually exclusive to
+programs.vscodium.profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">(removeAttrs config.programs.vscodium.profiles [ &quot;default&quot; ]) == { }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles"><code class="option">programs.vscodium.profiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A list of all VSCodium profiles. Mutually exclusive
+to programs.vscodium.mutableExtensionsDir</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.enableExtensionUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.enableExtensionUpdateCheck"><code class="option">programs.vscodium.profiles.&lt;name&gt;.enableExtensionUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update notifications for extensions.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.enableMcpIntegration"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.enableMcpIntegration"><code class="option">programs.vscodium.profiles.&lt;name&gt;.enableMcpIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to integrate the MCP servers config from
+<code class="option">programs.mcp.servers</code> into
+<code class="option">programs.vscodium.profiles.&lt;name&gt;.userMcp</code>.</p><p>Note: Settings defined in <code class="option">programs.mcp.servers</code> are merged
+with <code class="option">programs.vscodium.profiles.&lt;name&gt;.userMcp</code>, with VSCodium
+settings taking precedence.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.enableUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.enableUpdateCheck"><code class="option">programs.vscodium.profiles.&lt;name&gt;.enableUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update checks/notifications.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.extensions"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.extensions"><code class="option">programs.vscodium.profiles.&lt;name&gt;.extensions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The extensions VSCodium should be started with.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[ pkgs.vscode-extensions.bbenoist.nix ]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.globalSnippets"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.globalSnippets"><code class="option">programs.vscodium.profiles.&lt;name&gt;.globalSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines global user snippets.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  fixme = {
+    body = [
+      &quot;$LINE_COMMENT FIXME: $0&quot;
+    ];
+    description = &quot;Insert a FIXME remark&quot;;
+    prefix = [
+      &quot;fixme&quot;
+    ];
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.keybindings"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.keybindings"><code class="option">programs.vscodium.profiles.&lt;name&gt;.keybindings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Keybindings written to VSCodium’s
+<code class="filename">keybindings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or list of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  {
+    key = &quot;ctrl+c&quot;;
+    command = &quot;editor.action.clipboardCopyAction&quot;;
+    when = &quot;textInputFocus&quot;;
+  }
+]
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.keybindings._.args"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.keybindings._.args"><code class="option">programs.vscodium.profiles.&lt;name&gt;.keybindings.*.args</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional arguments for a command.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  direction = &quot;up&quot;;
+}
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.keybindings._.command"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.keybindings._.command"><code class="option">programs.vscodium.profiles.&lt;name&gt;.keybindings.*.command</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The VS Code command to execute.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;editor.action.clipboardCopyAction&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.keybindings._.key"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.keybindings._.key"><code class="option">programs.vscodium.profiles.&lt;name&gt;.keybindings.*.key</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The key or key-combination to bind.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;ctrl+c&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.keybindings._.when"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.keybindings._.when"><code class="option">programs.vscodium.profiles.&lt;name&gt;.keybindings.*.when</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional context filter.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;textInputFocus&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.languageSnippets"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.languageSnippets"><code class="option">programs.vscodium.profiles.&lt;name&gt;.languageSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines user snippets for different languages.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  haskell = {
+    fixme = {
+      body = [
+        &quot;$LINE_COMMENT FIXME: $0&quot;
+      ];
+      description = &quot;Insert a FIXME remark&quot;;
+      prefix = [
+        &quot;fixme&quot;
+      ];
+    };
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.userMcp"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.userMcp"><code class="option">programs.vscodium.profiles.&lt;name&gt;.userMcp</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to VSCodium’s
+<code class="filename">mcp.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;servers&quot;: {
+    &quot;Github&quot;: {
+      &quot;url&quot;: &quot;https://api.githubcopilot.com/mcp/&quot;
+    }
+  }
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.userSettings"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.userSettings"><code class="option">programs.vscodium.profiles.&lt;name&gt;.userSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to VSCodium’s
+<code class="filename">settings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;files.autoSave&quot; = &quot;off&quot;;
+  &quot;[nix]&quot;.&quot;editor.tabSize&quot; = 2;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.vscodium.profiles._name_.userTasks"></a><a class="term" href="options.xhtml#opt-programs.vscodium.profiles._name_.userTasks"><code class="option">programs.vscodium.profiles.&lt;name&gt;.userTasks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to VSCodium’s
+<code class="filename">tasks.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  version = &quot;2.0.0&quot;;
+  tasks = [
+    {
+      type = &quot;shell&quot;;
+      label = &quot;Hello task&quot;;
+      command = &quot;hello&quot;;
+    }
+  ];
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/vscodium.nix" target="_top">
+&lt;home-manager/modules/programs/vscodium.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -95393,6 +98099,538 @@ attribute set of anything</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/wezterm.nix" target="_top">
 &lt;home-manager/modules/programs/wezterm.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.enable"></a><a class="term" href="options.xhtml#opt-programs.windsurf.enable"><code class="option">programs.windsurf.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Windsurf.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.package"></a><a class="term" href="options.xhtml#opt-programs.windsurf.package"><code class="option">programs.windsurf.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The windsurf package to use. Version of Windsurf to install.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.windsurf
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.argvSettings"></a><a class="term" href="options.xhtml#opt-programs.windsurf.argvSettings"><code class="option">programs.windsurf.argvSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Windsurf’s
+<code class="filename">argv.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  enable-crash-reporter = false;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.mutableExtensionsDir"></a><a class="term" href="options.xhtml#opt-programs.windsurf.mutableExtensionsDir"><code class="option">programs.windsurf.mutableExtensionsDir</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether extensions can be installed or updated manually
+or by Windsurf. Mutually exclusive to
+programs.windsurf.profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">(removeAttrs config.programs.windsurf.profiles [ &quot;default&quot; ]) == { }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles"><code class="option">programs.windsurf.profiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>A list of all Windsurf profiles. Mutually exclusive
+to programs.windsurf.mutableExtensionsDir</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.enableExtensionUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.enableExtensionUpdateCheck"><code class="option">programs.windsurf.profiles.&lt;name&gt;.enableExtensionUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update notifications for extensions.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.enableMcpIntegration"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.enableMcpIntegration"><code class="option">programs.windsurf.profiles.&lt;name&gt;.enableMcpIntegration</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to integrate the MCP servers config from
+<code class="option">programs.mcp.servers</code> into
+<code class="option">programs.windsurf.profiles.&lt;name&gt;.userMcp</code>.</p><p>Note: Settings defined in <code class="option">programs.mcp.servers</code> are merged
+with <code class="option">programs.windsurf.profiles.&lt;name&gt;.userMcp</code>, with Windsurf
+settings taking precedence.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.enableUpdateCheck"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.enableUpdateCheck"><code class="option">programs.windsurf.profiles.&lt;name&gt;.enableUpdateCheck</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable update checks/notifications.
+Can only be set for the default profile, but
+it applies to all profiles.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.extensions"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.extensions"><code class="option">programs.windsurf.profiles.&lt;name&gt;.extensions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The extensions Windsurf should be started with.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[ pkgs.vscode-extensions.bbenoist.nix ]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.globalSnippets"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.globalSnippets"><code class="option">programs.windsurf.profiles.&lt;name&gt;.globalSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines global user snippets.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  fixme = {
+    body = [
+      &quot;$LINE_COMMENT FIXME: $0&quot;
+    ];
+    description = &quot;Insert a FIXME remark&quot;;
+    prefix = [
+      &quot;fixme&quot;
+    ];
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.keybindings"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.keybindings"><code class="option">programs.windsurf.profiles.&lt;name&gt;.keybindings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Keybindings written to Windsurf’s
+<code class="filename">keybindings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or list of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  {
+    key = &quot;ctrl+c&quot;;
+    command = &quot;editor.action.clipboardCopyAction&quot;;
+    when = &quot;textInputFocus&quot;;
+  }
+]
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.keybindings._.args"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.keybindings._.args"><code class="option">programs.windsurf.profiles.&lt;name&gt;.keybindings.*.args</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional arguments for a command.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  direction = &quot;up&quot;;
+}
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.keybindings._.command"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.keybindings._.command"><code class="option">programs.windsurf.profiles.&lt;name&gt;.keybindings.*.command</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The VS Code command to execute.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;editor.action.clipboardCopyAction&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.keybindings._.key"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.keybindings._.key"><code class="option">programs.windsurf.profiles.&lt;name&gt;.keybindings.*.key</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The key or key-combination to bind.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;ctrl+c&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.keybindings._.when"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.keybindings._.when"><code class="option">programs.windsurf.profiles.&lt;name&gt;.keybindings.*.when</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Optional context filter.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;textInputFocus&quot;
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.languageSnippets"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.languageSnippets"><code class="option">programs.windsurf.profiles.&lt;name&gt;.languageSnippets</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Defines user snippets for different languages.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  haskell = {
+    fixme = {
+      body = [
+        &quot;$LINE_COMMENT FIXME: $0&quot;
+      ];
+      description = &quot;Insert a FIXME remark&quot;;
+      prefix = [
+        &quot;fixme&quot;
+      ];
+    };
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.userMcp"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.userMcp"><code class="option">programs.windsurf.profiles.&lt;name&gt;.userMcp</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Windsurf’s
+<code class="filename">mcp.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;servers&quot;: {
+    &quot;Github&quot;: {
+      &quot;url&quot;: &quot;https://api.githubcopilot.com/mcp/&quot;
+    }
+  }
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.userSettings"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.userSettings"><code class="option">programs.windsurf.profiles.&lt;name&gt;.userSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Windsurf’s
+<code class="filename">settings.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;files.autoSave&quot; = &quot;off&quot;;
+  &quot;[nix]&quot;.&quot;editor.tabSize&quot; = 2;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.windsurf.profiles._name_.userTasks"></a><a class="term" href="options.xhtml#opt-programs.windsurf.profiles._name_.userTasks"><code class="option">programs.windsurf.profiles.&lt;name&gt;.userTasks</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration written to Windsurf’s
+<code class="filename">tasks.json</code>.
+This can be a JSON object or a path to a custom JSON file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  version = &quot;2.0.0&quot;;
+  tasks = [
+    {
+      type = &quot;shell&quot;;
+      label = &quot;Hello task&quot;;
+      command = &quot;hello&quot;;
+    }
+  ];
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/windsurf.nix" target="_top">
+&lt;home-manager/modules/programs/windsurf.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -101472,7 +104710,7 @@ strings concatenated with “\n”</p>
 may be useful when overriding.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-lazy attribute set of (null or string or absolute path or signed integer or floating point number)</p>
+lazy attribute set of (null or string or absolute path or signed integer or floating point number or boolean)</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
 </code></pre>
@@ -107639,6 +110877,117 @@ attribute set of (string or signed integer)</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-services.exo.enable"></a><a class="term" href="options.xhtml#opt-services.exo.enable"><code class="option">services.exo.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable exo local AI cluster node.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/exo.nix" target="_top">
+&lt;home-manager/modules/services/exo.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.exo.package"></a><a class="term" href="options.xhtml#opt-services.exo.package"><code class="option">services.exo.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The exo package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.exo
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/exo.nix" target="_top">
+&lt;home-manager/modules/services/exo.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.exo.environmentVariables"></a><a class="term" href="options.xhtml#opt-services.exo.environmentVariables"><code class="option">services.exo.environmentVariables</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Environment variables for the exo service.</p><p>See <a class="link" href="https://github.com/exo-explore/exo#environment-variables"  target="_top">https://github.com/exo-explore/exo#environment-variables</a>
+for supported environment variables.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  EXO_LIBP2P_NAMESPACE = &quot;home-cluster&quot;;
+  EXO_OFFLINE = &quot;true&quot;;
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/exo.nix" target="_top">
+&lt;home-manager/modules/services/exo.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.exo.extraArgs"></a><a class="term" href="options.xhtml#opt-services.exo.extraArgs"><code class="option">services.exo.extraArgs</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Extra command-line arguments passed to <span class="command"><strong>exo</strong></span>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  &quot;--no-worker&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/exo.nix" target="_top">
+&lt;home-manager/modules/services/exo.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-services.flameshot.enable"></a><a class="term" href="options.xhtml#opt-services.flameshot.enable"><code class="option">services.flameshot.enable</code>
   </a>
  </span>
@@ -112811,6 +116160,37 @@ boolean</p>
 package</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.keynav
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/keynav.nix" target="_top">
+&lt;home-manager/modules/services/keynav.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.keynav.settings"></a><a class="term" href="options.xhtml#opt-services.keynav.settings"><code class="option">services.keynav.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration for keynav written to <code class="filename">$XDG_CONFIG_HOME/keynav/keynavrc</code>. Each attribute name is a key binding and the value is the action. See <a class="link" href="https://github.com/jordansissel/keynav/blob/master/keynav.pod"  target="_top">https://github.com/jordansissel/keynav/blob/master/keynav.pod</a> for available bindings and actions.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (atom (null, bool, int, float or string))</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;2&quot; = &quot;doubleclick,end&quot;;
+  &quot;4&quot; = &quot;click 4&quot;;
+  &quot;5&quot; = &quot;click 5&quot;;
+}
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
