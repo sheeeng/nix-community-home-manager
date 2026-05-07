@@ -10578,9 +10578,11 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+<p>When <code class="literal">recursive</code> is enabled, adds the <code class="literal">-ignorelinks</code> flag to lndir.</p><p>It causes lndir to not treat symbolic links in the source directory specially.
 The link created in the target directory will point back to the corresponding
-(symbolic link) file in the source directory. If the link is to a directory</p>
+symbolic link in the source directory. If that link points to a directory, the
+resulting target will be a link to the source tree’s symlink rather than a
+recursively linked directory tree.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -11668,6 +11670,34 @@ absolute path <span class="emphasis"><em>(read only)</em></span></p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/home-environment.nix" target="_top">
 &lt;home-manager/modules/home-environment.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-home.services"></a><a class="term" href="options.xhtml#opt-home.services"><code class="option">home.services</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Home-Manager <a class="link" href="https://nixos.org/manual/nixos/unstable/#modular-services"  target="_top">modular services</a>.</p><p>Each entry is an abstract service that may declare a <code class="option">process.argv</code>
+and home-manager-style <code class="option">systemd.user.{services,sockets}</code> units
+(INI section shape). Units are emitted under home-manager’s
+<code class="option">systemd.user.services</code> (and friends) with the service name
+as a prefix. Mirrors <code class="option">system.services</code> in NixOS.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services-modular" target="_top">
+&lt;home-manager/modules/services-modular&gt;
 </a></code>
 </td></tr>
 </table>
@@ -15047,8 +15077,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -15075,8 +15105,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -34299,8 +34329,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -34327,8 +34357,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -34953,8 +34983,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -34981,8 +35011,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35675,8 +35705,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35703,8 +35733,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -37840,8 +37870,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -37868,8 +37898,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38494,8 +38524,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38522,8 +38552,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -39216,8 +39246,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -39244,8 +39274,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -57219,8 +57249,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -57247,8 +57277,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -57873,8 +57903,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -57901,8 +57931,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58595,8 +58625,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58623,8 +58653,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -66391,9 +66421,11 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+<p>When <code class="literal">recursive</code> is enabled, adds the <code class="literal">-ignorelinks</code> flag to lndir.</p><p>It causes lndir to not treat symbolic links in the source directory specially.
 The link created in the target directory will point back to the corresponding
-(symbolic link) file in the source directory. If the link is to a directory</p>
+symbolic link in the source directory. If that link points to a directory, the
+resulting target will be a link to the source tree’s symlink rather than a
+recursively linked directory tree.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -90676,8 +90708,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -90704,8 +90736,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/3ncxwa4d7srv7xr3mni45acdzg55ssbk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/avx6wgw9vk5761b8zc9353pqxan82s4s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -101042,6 +101074,31 @@ boolean</p>
 null or package</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.zed-editor
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zed-editor.nix" target="_top">
+&lt;home-manager/modules/programs/zed-editor.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zed-editor.defaultEditor"></a><a class="term" href="options.xhtml#opt-programs.zed-editor.defaultEditor"><code class="option">programs.zed-editor.defaultEditor</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to set <span class="command"><strong>zeditor -w</strong></span> as the default editor using the
+<code class="envar">EDITOR</code> and <code class="envar">VISUAL</code> environment variables.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -144743,9 +144800,11 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+<p>When <code class="literal">recursive</code> is enabled, adds the <code class="literal">-ignorelinks</code> flag to lndir.</p><p>It causes lndir to not treat symbolic links in the source directory specially.
 The link created in the target directory will point back to the corresponding
-(symbolic link) file in the source directory. If the link is to a directory</p>
+symbolic link in the source directory. If that link points to a directory, the
+resulting target will be a link to the source tree’s symlink rather than a
+recursively linked directory tree.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -145029,9 +145088,11 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+<p>When <code class="literal">recursive</code> is enabled, adds the <code class="literal">-ignorelinks</code> flag to lndir.</p><p>It causes lndir to not treat symbolic links in the source directory specially.
 The link created in the target directory will point back to the corresponding
-(symbolic link) file in the source directory. If the link is to a directory</p>
+symbolic link in the source directory. If that link points to a directory, the
+resulting target will be a link to the source tree’s symlink rather than a
+recursively linked directory tree.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -145315,9 +145376,11 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+<p>When <code class="literal">recursive</code> is enabled, adds the <code class="literal">-ignorelinks</code> flag to lndir.</p><p>It causes lndir to not treat symbolic links in the source directory specially.
 The link created in the target directory will point back to the corresponding
-(symbolic link) file in the source directory. If the link is to a directory</p>
+symbolic link in the source directory. If that link points to a directory, the
+resulting target will be a link to the source tree’s symlink rather than a
+recursively linked directory tree.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -146492,9 +146555,11 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>When <code class="literal">recursive</code> is enabled, adds <code class="literal">-ignorelinks</code> flag to lndir</p><p>It causes lndir to not treat symbolic links in the source directory specially.
+<p>When <code class="literal">recursive</code> is enabled, adds the <code class="literal">-ignorelinks</code> flag to lndir.</p><p>It causes lndir to not treat symbolic links in the source directory specially.
 The link created in the target directory will point back to the corresponding
-(symbolic link) file in the source directory. If the link is to a directory</p>
+symbolic link in the source directory. If that link points to a directory, the
+resulting target will be a link to the source tree’s symlink rather than a
+recursively linked directory tree.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
