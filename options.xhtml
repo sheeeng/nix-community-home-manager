@@ -3798,7 +3798,9 @@ null or absolute path</p>
  </span>
 </dt>
 <dd>
-<p>Whether to use STARTTLS.</p>
+<p>Whether to use STARTTLS. This is discouraged and should be avoided if
+possible. See <a class="link" href="https://datatracker.ietf.org/doc/html/rfc8314"  target="_top">https://datatracker.ietf.org/doc/html/rfc8314</a> for
+more.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -4430,7 +4432,9 @@ null or absolute path</p>
  </span>
 </dt>
 <dd>
-<p>Whether to use STARTTLS.</p>
+<p>Whether to use STARTTLS. This is discouraged and should be avoided if
+possible. See <a class="link" href="https://datatracker.ietf.org/doc/html/rfc8314"  target="_top">https://datatracker.ietf.org/doc/html/rfc8314</a> for
+more.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -7391,7 +7395,9 @@ null or absolute path</p>
  </span>
 </dt>
 <dd>
-<p>Whether to use STARTTLS.</p>
+<p>Whether to use STARTTLS. This is discouraged and should be avoided if
+possible. See <a class="link" href="https://datatracker.ietf.org/doc/html/rfc8314"  target="_top">https://datatracker.ietf.org/doc/html/rfc8314</a> for
+more.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
@@ -11681,9 +11687,9 @@ absolute path <span class="emphasis"><em>(read only)</em></span></p>
  </span>
 </dt>
 <dd>
-<p>Home-Manager <a class="link" href="https://nixos.org/manual/nixos/unstable/#modular-services"  target="_top">modular services</a>.</p><p>Each entry is an abstract service that may declare a <code class="option">process.argv</code>
-and home-manager-style <code class="option">systemd.user.{services,sockets}</code> units
-(INI section shape). Units are emitted under home-manager’s
+<p>Home Manager <a class="link" href="https://nixos.org/manual/nixos/unstable/#modular-services"  target="_top">modular services</a>.</p><p>Each entry is an abstract service that may declare a <code class="option">process.argv</code>
+and Home Manager-style <code class="option">systemd.user.{services,sockets}</code> units
+(INI section shape). Units are emitted under Home Manager’s
 <code class="option">systemd.user.services</code> (and friends) with the service name
 as a prefix. Mirrors <code class="option">system.services</code> in NixOS.</p>
 
@@ -80556,7 +80562,7 @@ package</p>
 <p>Path where to put generated configuration file.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-string</p>
+non-empty string</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">&quot;$XDG_CONFIG_HOME/rofi/config.rasi&quot;
 </code></pre>
@@ -117354,7 +117360,7 @@ boolean</p>
 <p>The mako package to use.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-package</p>
+null or package</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.mako
 </code></pre>
@@ -140115,7 +140121,7 @@ boolean</p>
  </span>
 </dt>
 <dd>
-<p>Attribute set of Hyprland submaps.</p><p>See <a class="link" href="https://wiki.hypr.land/Configuring/Binds#submaps"  target="_top">https://wiki.hypr.land/Configuring/Binds#submaps</a> to learn about submaps</p>
+<p>Attribute set of Hyprland submaps.</p><p>See <a class="link" href="https://wiki.hypr.land/Configuring/Basics/Binds/#submaps"  target="_top">https://wiki.hypr.land/Configuring/Basics/Binds/#submaps</a> to learn about submaps</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 attribute set of (submodule)</p>
