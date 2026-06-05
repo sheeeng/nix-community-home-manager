@@ -8133,15 +8133,14 @@ attribute set of (submodule)</p>
  </span>
 </dt>
 <dd>
-<p>Whether to enable Whether this font config file should be generated…</p>
+<p>Whether this file should be generated. This option allows specific
+files to be disabled.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 boolean</p>
 
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
-</code></pre>
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">if lib.versionAtLeast config.home.stateVersion &quot;26.11&quot; then true else false
 
-<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -12063,7 +12062,7 @@ typically requires performing some manual steps, such as data
 conversion or moving files.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-one of “18.09”, “19.03”, “19.09”, “20.03”, “20.09”, “21.03”, “21.05”, “21.11”, “22.05”, “22.11”, “23.05”, “23.11”, “24.05”, “24.11”, “25.05”, “25.11”, “26.05”</p>
+one of “18.09”, “19.03”, “19.09”, “20.03”, “20.09”, “21.03”, “21.05”, “21.11”, “22.05”, “22.11”, “23.05”, “23.11”, “24.05”, “24.11”, “25.05”, “25.11”, “26.05”, “26.11”</p>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -15107,8 +15106,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -15135,8 +15134,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -20457,7 +20456,7 @@ JSON value</p>
 This can be a JSON object or a path to a custom JSON file.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-absolute path or list of (submodule)</p>
+absolute path or list of (open submodule of (JSON value))</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
 </code></pre>
@@ -29803,7 +29802,7 @@ JSON value</p>
 This can be a JSON object or a path to a custom JSON file.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-absolute path or list of (submodule)</p>
+absolute path or list of (open submodule of (JSON value))</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
 </code></pre>
@@ -34543,8 +34542,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -34571,8 +34570,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35197,8 +35196,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35225,8 +35224,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35919,8 +35918,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35947,8 +35946,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38081,8 +38080,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38109,8 +38108,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38735,8 +38734,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38763,8 +38762,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -39457,8 +39456,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -39485,8 +39484,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -49093,6 +49092,41 @@ null or package</p>
  </span>
 </dt>
 <dd>
+<p>Auto-activation settings for infat.</p><p>For backwards compatibility, this option also accepts a boolean.
+Boolean values are deprecated; use
+<code class="option">programs.infat.autoActivate.enable</code> instead.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+(submodule) or boolean convertible to it</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  enable = true;
+  extraArgs = [
+    &quot;--robust&quot;
+    &quot;--quiet&quot;
+  ];
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/infat.nix" target="_top">
+&lt;home-manager/modules/programs/infat.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.infat.autoActivate.enable"></a><a class="term" href="options.xhtml#opt-programs.infat.autoActivate.enable"><code class="option">programs.infat.autoActivate.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
 <p>Automatically activate infat on startup.
 This is useful if you want to use infat as a
 default application handler for certain file types.
@@ -49106,6 +49140,45 @@ boolean</p>
 </code></pre>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/infat.nix" target="_top">
+&lt;home-manager/modules/programs/infat.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.infat.autoActivate.extraArgs"></a><a class="term" href="options.xhtml#opt-programs.infat.autoActivate.extraArgs"><code class="option">programs.infat.autoActivate.extraArgs</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Additional arguments to pass when auto-activating infat.
+This can be used to customize the behavior of infat when
+it is auto-activated on startup. Call <code class="literal">infat --help</code>
+for more information on available arguments.
+If <code class="option">programs.infat.settings</code> is set,
+<code class="literal">config</code> will be added automatically.
+Otherwise you can set <code class="literal">config</code> to point
+to a custom configuration file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[
+  &quot;--robust&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  &quot;--robust&quot;
+  &quot;--quiet&quot;
+]
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -54019,7 +54092,7 @@ JSON value</p>
 This can be a JSON object or a path to a custom JSON file.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-absolute path or list of (submodule)</p>
+absolute path or list of (open submodule of (JSON value))</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
 </code></pre>
@@ -57486,8 +57559,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -57514,8 +57587,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58140,8 +58213,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58168,8 +58241,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58862,8 +58935,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58890,8 +58963,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -61560,6 +61633,197 @@ null or (unsigned integer, meaning &gt;=0)</p>
 <tr><td>
 <code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macchina" target="_top">
 &lt;home-manager/modules/programs/macchina&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.macos-terminal.enable"></a><a class="term" href="options.xhtml#opt-programs.macos-terminal.enable"><code class="option">programs.macos-terminal.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable macOS Terminal.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macos-terminal.nix" target="_top">
+&lt;home-manager/modules/programs/macos-terminal.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.macos-terminal.preferences"></a><a class="term" href="options.xhtml#opt-programs.macos-terminal.preferences"><code class="option">programs.macos-terminal.preferences</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Options controlling how Terminal.app preferences are applied and
+managed.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+submodule</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&#x27;&#x27;
+  {
+    importSettings = true;
+    writeFile = false;
+  }
+&#x27;&#x27;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macos-terminal.nix" target="_top">
+&lt;home-manager/modules/programs/macos-terminal.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.macos-terminal.preferences.importSettings"></a><a class="term" href="options.xhtml#opt-programs.macos-terminal.preferences.importSettings"><code class="option">programs.macos-terminal.preferences.importSettings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to import the generated plist into the
+<code class="literal">com.apple.Terminal</code> preferences domain during activation.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macos-terminal.nix" target="_top">
+&lt;home-manager/modules/programs/macos-terminal.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.macos-terminal.preferences.writeFile"></a><a class="term" href="options.xhtml#opt-programs.macos-terminal.preferences.writeFile"><code class="option">programs.macos-terminal.preferences.writeFile</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to write the generated plist into the
+<code class="literal">~/Library/Preferences/com.apple.Terminal.plist</code> file during
+activation.</p><p>This is primarily useful for inspection and testing purposes.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macos-terminal.nix" target="_top">
+&lt;home-manager/modules/programs/macos-terminal.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.macos-terminal.profiles"></a><a class="term" href="options.xhtml#opt-programs.macos-terminal.profiles"><code class="option">programs.macos-terminal.profiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Configuration settings for profiles within the Terminal.app application.</p><p>Each attribute name is used as the name of the profile, and the value
+defines the plist-compatible settings for that profile.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (submodule)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&#x27;&#x27;
+  {
+    Basic.settings = {
+      FontAntialias = true;
+      ShowActiveProcessInTitle = true;
+    };
+  
+    &quot;Red Sands&quot;.settings = {
+      BackgroundAlphaInactive = 0.5;
+      CommandString = &quot;ssh compute&quot;;
+    };
+  }
+&#x27;&#x27;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macos-terminal.nix" target="_top">
+&lt;home-manager/modules/programs/macos-terminal.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.macos-terminal.profiles._name_.settings"></a><a class="term" href="options.xhtml#opt-programs.macos-terminal.profiles._name_.settings"><code class="option">programs.macos-terminal.profiles.&lt;name&gt;.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Raw plist-compatible settings for profiles within the Terminal.app
+application.</p><p>This attribute set is intended for simple settings that have a
+well defined mapping to plist properties.</p><p>Properties that are more obscure and require serialization as
+archived Cocoa objects, for example, are unsupported here - they
+may require dedicated module options in future.</p><p>Attribute names should reflect the name of plist properties
+understood by the Terminal.app application. Unknown attributes
+will still be serialized, but may remain unrecognised - and thus
+unhonored - by the Terminal.app application.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (Property list (plist) value)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&#x27;&#x27;
+  {
+    FontAntialias = true;
+    ShowActiveProcessInTitle = true;
+    ShowCommandKeyInTitle = true;
+  };
+&#x27;&#x27;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/macos-terminal.nix" target="_top">
+&lt;home-manager/modules/programs/macos-terminal.nix&gt;
 </a></code>
 </td></tr>
 </table>
@@ -73801,7 +74065,7 @@ available keys.</p>
 <p><span class="emphasis"><em>Type:</em></span>
 attribute set of string</p>
 
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">if lib.versionAtLeast config.home.stateVersion &quot;25.11&quot; then { } else { PASSWORD_STORE_DIR = &quot;$XDG_DATA_HOME/password-store&quot;; }
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">if lib.versionAtLeast config.home.stateVersion &quot;25.11&quot; then { } else { PASSWORD_STORE_DIR = &quot;${config.xdg.dataHome}/password-store&quot;; }
 
 </code></pre>
 
@@ -90167,8 +90431,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -90195,8 +90459,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/fjh4h1yh7yd6f56az28d9c5r7cqag56l-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/sixfvygd759vgqlj2dab825dldzzqp9s-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -95124,7 +95388,7 @@ JSON value</p>
 This can be a JSON object or a path to a custom JSON file.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-absolute path or list of (submodule)</p>
+absolute path or list of (open submodule of (JSON value))</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
 </code></pre>
@@ -95654,7 +95918,7 @@ JSON value</p>
 This can be a JSON object or a path to a custom JSON file.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-absolute path or list of (submodule)</p>
+absolute path or list of (open submodule of (JSON value))</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
 </code></pre>
@@ -97894,7 +98158,7 @@ JSON value</p>
 This can be a JSON object or a path to a custom JSON file.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-absolute path or list of (submodule)</p>
+absolute path or list of (open submodule of (JSON value))</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
 </code></pre>
@@ -103024,34 +103288,10 @@ list of (submodule)</p>
   name = &quot;wd&quot;;
   src = pkgs.zsh-wd;
   file = &quot;share/wd/wd.plugin.zsh&quot;;
-  completions = [ &quot;share/zsh/site-functions&quot; ];
+  functions = [ &quot;share/zsh/site-functions&quot; ];
 }
 ]
 
-</code></pre>
-
-<p><span class="emphasis"><em>Declared by:</em></span></p>
-<table border="0" summary="Simple list" class="simplelist">
-<tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh/plugins" target="_top">
-&lt;home-manager/modules/programs/zsh/plugins&gt;
-</a></code>
-</td></tr>
-</table>
-</dd>
-<dt>
- <span class="term">
- <a id="opt-programs.zsh.plugins._.completions"></a><a class="term" href="options.xhtml#opt-programs.zsh.plugins._.completions"><code class="option">programs.zsh.plugins.*.completions</code>
-  </a>
- </span>
-</dt>
-<dd>
-<p>Paths of additional functions to add to <code class="envar">fpath</code>.</p>
-
-<p><span class="emphasis"><em>Type:</em></span>
-list of string</p>
-
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
@@ -103076,6 +103316,30 @@ using the plugin <code class="option">name</code> from the plugin <code class="o
 
 <p><span class="emphasis"><em>Type:</em></span>
 string</p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/zsh/plugins" target="_top">
+&lt;home-manager/modules/programs/zsh/plugins&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.zsh.plugins._.functions"></a><a class="term" href="options.xhtml#opt-programs.zsh.plugins._.functions"><code class="option">programs.zsh.plugins.*.functions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Paths of additional functions to add to <code class="envar">fpath</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -123335,7 +123599,6 @@ attribute set of (submodule)</p>
     timezone = &quot;UTC&quot;;
     volumes = [
       &quot;/Users:/Users&quot;
-      &quot;/private:/private&quot;
     ];
     watchdogInterval = 30;
   };
@@ -123607,19 +123870,20 @@ null or string</p>
  </span>
 </dt>
 <dd>
-<p>Volumes to mount in the machine, specified as source:target pairs.
-If empty, podman will use its default volume mounts.</p>
+<p>Volumes to mount in the machine, specified as source:target pairs.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 list of string</p>
 
-<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[
+  &quot;/Users:/Users&quot;
+  &quot;/private:/private&quot;
+  &quot;/var/folders:/var/folders&quot;
+]
 </code></pre>
 
 <p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
   &quot;/Users:/Users&quot;
-  &quot;/private:/private&quot;
-  &quot;/var/folders:/var/folders&quot;
 ]
 </code></pre>
 
@@ -132709,6 +132973,233 @@ package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-services.voxtype.enable"></a><a class="term" href="options.xhtml#opt-services.voxtype.enable"><code class="option">services.voxtype.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to enable Voxtype speech-to-text daemon.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.voxtype.package"></a><a class="term" href="options.xhtml#opt-services.voxtype.package"><code class="option">services.voxtype.package</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The voxtype package to use.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+package</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.voxtype
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">pkgs.voxtype-vulkan
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.voxtype.environment"></a><a class="term" href="options.xhtml#opt-services.voxtype.environment"><code class="option">services.voxtype.environment</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Environment variables for the Voxtype user service.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.voxtype.extraArgs"></a><a class="term" href="options.xhtml#opt-services.voxtype.extraArgs"><code class="option">services.voxtype.extraArgs</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Extra command-line arguments passed to <code class="literal">voxtype daemon</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  &quot;--verbose&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.voxtype.loadModels"></a><a class="term" href="options.xhtml#opt-services.voxtype.loadModels"><code class="option">services.voxtype.loadModels</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Downloads the listed models with <code class="literal">voxtype setup --download</code> before starting
+the daemon.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  &quot;base.en&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.voxtype.settings"></a><a class="term" href="options.xhtml#opt-services.voxtype.settings"><code class="option">services.voxtype.settings</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Voxtype configuration written to <code class="literal">$XDG_CONFIG_HOME/voxtype/config.toml</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+TOML value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  output = {
+    fallback_to_clipboard = true;
+    mode = &quot;type&quot;;
+  };
+  whisper = {
+    language = &quot;en&quot;;
+    model = &quot;base.en&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.voxtype.wayland.display"></a><a class="term" href="options.xhtml#opt-services.voxtype.wayland.display"><code class="option">services.voxtype.wayland.display</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Wayland display socket name to expose to the Voxtype user service.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;wayland-1&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-services.voxtype.x11.display"></a><a class="term" href="options.xhtml#opt-services.voxtype.x11.display"><code class="option">services.voxtype.x11.display</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>X11 display name to expose to the Voxtype user service.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;:0&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/voxtype.nix" target="_top">
+&lt;home-manager/modules/services/voxtype.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-services.walker.enable"></a><a class="term" href="options.xhtml#opt-services.walker.enable"><code class="option">services.walker.enable</code>
   </a>
  </span>
@@ -135728,6 +136219,35 @@ submodule</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-sshAuthSock.enable"></a><a class="term" href="options.xhtml#opt-sshAuthSock.enable"><code class="option">sshAuthSock.enable</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to set <code class="envar">SSH_AUTH_SOCK</code> in shells, systemd, and the D-BUS daemon
+unless it was already defined through SSH agent forwarding.</p><p>Typically, this module will be implicitly enabled and configured by SSH
+agent modules.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/ssh-auth-sock.nix" target="_top">
+&lt;home-manager/modules/misc/ssh-auth-sock.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-sshAuthSock.initialization.bash"></a><a class="term" href="options.xhtml#opt-sshAuthSock.initialization.bash"><code class="option">sshAuthSock.initialization.bash</code>
   </a>
  </span>
@@ -135737,6 +136257,9 @@ submodule</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock&quot;
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -135759,6 +136282,9 @@ string</p>
 <p><span class="emphasis"><em>Type:</em></span>
 string</p>
 
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;set -x SSH_AUTH_SOCK $HOME/.ssh/agent.sock&quot;
+</code></pre>
+
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
@@ -135779,6 +136305,62 @@ string</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;$env.SSH_AUTH_SOCK = $HOME/.ssh/agent.sock&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/ssh-auth-sock.nix" target="_top">
+&lt;home-manager/modules/misc/ssh-auth-sock.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-sshAuthSock.initialization.zsh"></a><a class="term" href="options.xhtml#opt-sshAuthSock.initialization.zsh"><code class="option">sshAuthSock.initialization.zsh</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Code that initializes <code class="envar">SSH_AUTH_SOCK</code> in zsh.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">config.sshAuthSock.initialization.bash
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;export SSH_AUTH_SOCK=$HOME/.ssh/agent.sock&quot;
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/misc/ssh-auth-sock.nix" target="_top">
+&lt;home-manager/modules/misc/ssh-auth-sock.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-sshAuthSock.systemd.socketProviderUnit"></a><a class="term" href="options.xhtml#opt-sshAuthSock.systemd.socketProviderUnit"><code class="option">sshAuthSock.systemd.socketProviderUnit</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>The name of the systemd unit responsible for providing the <code class="envar">SSH_AUTH_SOCK</code>.</p><p>Services that rely on an active SSH authentication agent can reference
+this option to declare a dependency onto this unit, ensuring that the
+socket is available and being served before they start.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+string</p>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">&quot;ssh-agent.service&quot;
+</code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
@@ -139590,8 +140172,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139614,8 +140196,8 @@ null or package</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139640,8 +140222,8 @@ one of “hyprlang”, “lua”</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139676,8 +140258,109 @@ strings concatenated with “\n”</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.hyprland.extraLuaFiles"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.hyprland.extraLuaFiles"><code class="option">wayland.windowManager.hyprland.extraLuaFiles</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Extra Lua files written under <code class="filename">$XDG_CONFIG_HOME/hypr</code>.</p><p>Attribute names are used as Lua module names and converted to file
+names with a <code class="filename">.lua</code> suffix added when missing. For example,
+<code class="literal">bindings</code> writes
+<code class="filename">$XDG_CONFIG_HOME/hypr/bindings.lua</code>, while
+<code class="literal">lib.helpers</code> writes <code class="filename">$XDG_CONFIG_HOME/hypr/lib/helpers.lua</code>.</p><p>Files with <code class="option">autoLoad</code> enabled generate <code class="literal">require(...)</code> calls in
+<code class="filename">$XDG_CONFIG_HOME/hypr/hyprland.lua</code> after adding the Hypr config
+directory to Lua’s <code class="literal">package.path</code>. Use <code class="option">autoLoad = false</code> for
+helper modules that are imported by other Lua files.</p><p>This option only affects generated files when
+<code class="option">wayland.windowManager.hyprland.configType</code> is <code class="literal">&quot;lua&quot;</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of ((submodule) or (absolute path or strings concatenated with “\n”) convertible to it)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  &quot;00-vars&quot; = &#x27;\&#x27;
+    local M = {}
+    M.mainMod = &quot;SUPER&quot;
+    return M
+  &#x27;\&#x27;;
+
+  &quot;ui.bindings&quot; = {
+    content = ./bindings.lua;
+    autoLoad = true;
+  };
+
+  &quot;lib.helpers&quot; = {
+    content = ./helpers.lua;
+    autoLoad = false;
+  };
+
+  &quot;from-path.lua&quot; = ./startup.lua;
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.hyprland.extraLuaFiles._name_.autoLoad"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.hyprland.extraLuaFiles._name_.autoLoad"><code class="option">wayland.windowManager.hyprland.extraLuaFiles.&lt;name&gt;.autoLoad</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to generate a <code class="literal">require(...)</code> call for this file in
+<code class="filename">$XDG_CONFIG_HOME/hypr/hyprland.lua</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">true
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-wayland.windowManager.hyprland.extraLuaFiles._name_.content"></a><a class="term" href="options.xhtml#opt-wayland.windowManager.hyprland.extraLuaFiles._name_.content"><code class="option">wayland.windowManager.hyprland.extraLuaFiles.&lt;name&gt;.content</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Lua file content, set either by specifying a path to a Lua
+file or by providing a multi-line Lua string.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+absolute path or strings concatenated with “\n”</p>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139700,8 +140383,8 @@ null or package <span class="emphasis"><em>(read only)</em></span></p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139725,8 +140408,8 @@ null or package <span class="emphasis"><em>(read only)</em></span></p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139761,8 +140444,8 @@ list of string</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139786,8 +140469,8 @@ list of (package or absolute path)</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139810,8 +140493,8 @@ null or package</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139905,8 +140588,8 @@ Hyprland configuration value</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139933,8 +140616,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -139981,8 +140664,8 @@ attribute set of (submodule)</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -140008,8 +140691,8 @@ string</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -140059,8 +140742,8 @@ Hyprland binds</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -140089,8 +140772,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -140117,8 +140800,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -140144,8 +140827,8 @@ list of string</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -140180,8 +140863,8 @@ list of string</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
@@ -140208,8 +140891,8 @@ boolean</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland.nix" target="_top">
-&lt;home-manager/modules/services/window-managers/hyprland.nix&gt;
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/hyprland" target="_top">
+&lt;home-manager/modules/services/window-managers/hyprland&gt;
 </a></code>
 </td></tr>
 </table>
