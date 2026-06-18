@@ -15107,8 +15107,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -15135,8 +15135,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -21172,9 +21172,9 @@ JSON value</p>
 </dt>
 <dd>
 <p>Custom skills for Antigravity CLI.</p><p>This option can be either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>An attribute set defining skills</p></li><li class="listitem"><p>A path to a directory containing skill folders</p></li></ul></div><p>If an attribute set is used, the attribute name becomes the
-skill directory name, and the value is either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>Inline content as a string (creates <code class="literal">~/.gemini/config/skills/&lt;name&gt;/SKILL.md</code>)</p></li><li class="listitem"><p>A path to a file (creates <code class="literal">~/.gemini/config/skills/&lt;name&gt;/SKILL.md</code>)</p></li><li class="listitem"><p>A path to a directory (symlinks <code class="literal">~/.gemini/config/skills/&lt;name&gt;/</code> to that directory)</p></li></ul></div><p>If a path is used, it is expected to contain one folder per
+skill directory name, and the value is either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>Inline content as a string (creates <code class="literal">~/.gemini/antigravity-cli/skills/&lt;name&gt;/SKILL.md</code>)</p></li><li class="listitem"><p>A path to a file (creates <code class="literal">~/.gemini/antigravity-cli/skills/&lt;name&gt;/SKILL.md</code>)</p></li><li class="listitem"><p>A path to a directory (symlinks <code class="literal">~/.gemini/antigravity-cli/skills/&lt;name&gt;/</code> to that directory)</p></li></ul></div><p>If a path is used, it is expected to contain one folder per
 skill name, each containing a <code class="filename">SKILL.md</code>. The directory is
-symlinked to <code class="filename">~/.gemini/config/skills/</code>.</p>
+symlinked to <code class="filename">~/.gemini/antigravity-cli/skills/</code>.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
 (attribute set of (strings concatenated with “\n” or absolute path)) or absolute path</p>
@@ -29561,6 +29561,83 @@ strings concatenated with “\n” or absolute path</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.codex.marketplaces"></a><a class="term" href="options.xhtml#opt-programs.codex.marketplaces"><code class="option">programs.codex.marketplaces</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Custom marketplaces for Codex plugins.
+The attribute name becomes the marketplace name, and the value is either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>A path to the marketplace directory</p></li><li class="listitem"><p>The marketplace package, whether a nix package or the output of a fetcher</p></li></ul></div><p>Marketplaces are configured through <code class="filename">CODEX_HOME/config.toml</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (package or absolute path)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  local-marketplace = ./my-local-marketplace;
+  gh-marketplace = fetchFromGitHub {
+    owner = &quot;some-github-org&quot;;
+    repo = &quot;codex-marketplace&quot;;
+    rev = &quot;8a873a220b8427b25b03ce1a821593a24e098c34&quot;;
+    sha256 = &quot;5c2dce95122b5bb73fa547edabbb6c3061c2d193d11e51faecd4d22659e67279&quot;;
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/codex.nix" target="_top">
+&lt;home-manager/modules/programs/codex.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.codex.plugins"></a><a class="term" href="options.xhtml#opt-programs.codex.plugins"><code class="option">programs.codex.plugins</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>List of plugins to use when running Codex.
+Each entry is either:</p><div class="itemizedlist"><ul class="itemizedlist " style="list-style-type: disc;"><li class="listitem"><p>A path to the plugin directory</p></li><li class="listitem"><p>The plugin package, whether a nix package or the output of a fetcher
+Plugins are installed into Codex’s plugin cache and enabled through
+<code class="filename">CODEX_HOME/config.toml</code>.</p></li></ul></div><p>Warning: If using a derivation as the source for a plugin, make sure that
+the derivation name matches the name of the plugin in the manifest file.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of (package or absolute path)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  ./my-local-plugin
+  (fetchFromGitHub {
+    owner = &quot;some-github-org&quot;;
+    repo = &quot;codex-plugin&quot;;
+    rev = &quot;779a68ebc2a75e4a184d2c87e5a43a758e6458a1&quot;;
+    sha256 = &quot;228fdd7e5908ea1d2f65218ecd9c71e1eefa0834d200d55fbb8bf8b5563acec0&quot;;
+  })
+]
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/codex.nix" target="_top">
+&lt;home-manager/modules/programs/codex.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.codex.rules"></a><a class="term" href="options.xhtml#opt-programs.codex.rules"><code class="option">programs.codex.rules</code>
   </a>
  </span>
@@ -35119,8 +35196,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35147,8 +35224,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35773,8 +35850,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -35801,8 +35878,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -36495,8 +36572,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -36523,8 +36600,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38657,8 +38734,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -38685,8 +38762,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -39311,8 +39388,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -39339,8 +39416,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -40033,8 +40110,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -40061,8 +40138,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -46360,7 +46437,7 @@ boolean</p>
 <p>The helix package to use.</p>
 
 <p><span class="emphasis"><em>Type:</em></span>
-package</p>
+null or package</p>
 
 <p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">pkgs.helix
 </code></pre>
@@ -57847,8 +57924,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -57875,8 +57952,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58501,8 +58578,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -58529,8 +58606,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -59223,8 +59300,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -59251,8 +59328,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -76878,6 +76955,85 @@ attribute set of (INI atom (null, bool, int, float or string))</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.prismlauncher.themes"></a><a class="term" href="options.xhtml#opt-programs.prismlauncher.themes"><code class="option">programs.prismlauncher.themes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Prism Launcher widget themes.</p><p>Attribute names are used as theme directory names. A theme can either be
+a path to a complete theme directory, or an attribute set used to
+generate <code class="filename">theme.json</code> and optionally <code class="filename">themeStyle.css</code>.</p><p>These will be linked in <code class="filename">$XDG_DATA_HOME/PrismLauncher/themes</code> on
+Linux and <code class="filename">~/Library/Application Support/PrismLauncher/themes</code> on
+macOS.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (absolute path or (submodule))</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  Tokyo-Night = ./Tokyo-Night;
+
+  custom = {
+    theme = {
+      name = &quot;Custom&quot;;
+      colors = {
+        background = &quot;#1a1b26&quot;;
+        foreground = &quot;#c0caf5&quot;;
+      };
+    };
+    style = &#x27;&#x27;
+      QWidget {
+        font-family: &quot;Inter&quot;;
+      }
+    &#x27;&#x27;;
+  };
+}
+
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/prismlauncher.nix" target="_top">
+&lt;home-manager/modules/programs/prismlauncher.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.prismlauncher.themes._name_.style"></a><a class="term" href="options.xhtml#opt-programs.prismlauncher.themes._name_.style"><code class="option">programs.prismlauncher.themes.&lt;name&gt;.style</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Contents of, or path to, the theme’s <code class="filename">themeStyle.css</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+null or strings concatenated with “\n” or absolute path</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">null
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.prismlauncher.themes._name_.theme"></a><a class="term" href="options.xhtml#opt-programs.prismlauncher.themes._name_.theme"><code class="option">programs.prismlauncher.themes.&lt;name&gt;.theme</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Contents of the theme’s <code class="filename">theme.json</code>.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+JSON value</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.ptyxis.enable"></a><a class="term" href="options.xhtml#opt-programs.ptyxis.enable"><code class="option">programs.ptyxis.enable</code>
   </a>
  </span>
@@ -89207,6 +89363,57 @@ TOML value</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.television.themes"></a><a class="term" href="options.xhtml#opt-programs.television.themes"><code class="option">programs.television.themes</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Each theme is written to
+<code class="filename">$XDG_CONFIG_HOME/television/themes/NAME.toml</code>.</p><p>See <a class="link" href="https://alexpasmantier.github.io/television/user-guide/themes"  target="_top">https://alexpasmantier.github.io/television/user-guide/themes</a>
+for more information.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+attribute set of (TOML value or strings concatenated with “\n” or absolute path)</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">{ }
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">{
+  default = {
+    action_picker_mode_bg = &quot;magenta&quot;;
+    action_picker_mode_fg = &quot;black&quot;;
+    border_fg = &quot;bright-black&quot;;
+    channel_mode_bg = &quot;green&quot;;
+    channel_mode_fg = &quot;black&quot;;
+    dimmed_text_fg = &quot;white&quot;;
+    input_text_fg = &quot;bright-red&quot;;
+    match_fg = &quot;bright-red&quot;;
+    preview_title_fg = &quot;bright-magenta&quot;;
+    remote_control_mode_bg = &quot;yellow&quot;;
+    remote_control_mode_fg = &quot;black&quot;;
+    result_count_fg = &quot;bright-red&quot;;
+    result_line_number_fg = &quot;bright-yellow&quot;;
+    result_name_fg = &quot;bright-blue&quot;;
+    result_value_fg = &quot;white&quot;;
+    selection_bg = &quot;bright-black&quot;;
+    selection_fg = &quot;bright-green&quot;;
+    send_to_channel_mode_fg = &quot;cyan&quot;;
+    text_fg = &quot;bright-blue&quot;;
+  };
+}
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/television.nix" target="_top">
+&lt;home-manager/modules/programs/television.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.terminator.enable"></a><a class="term" href="options.xhtml#opt-programs.terminator.enable"><code class="option">programs.terminator.enable</code>
   </a>
  </span>
@@ -91176,8 +91383,8 @@ list of lib.maintainers</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -91204,8 +91411,8 @@ list of lib.teams</p>
 <p><span class="emphasis"><em>Declared by:</em></span></p>
 <table border="0" summary="Simple list" class="simplelist">
 <tr><td>
-<code class="filename"><a class="filename"  href="file:///nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix" target="_top">
-/nix/store/lvzmhvqzp2x0br4fy2ibw53ggdsd07dk-source/modules/generic/meta-maintainers.nix
+<code class="filename"><a class="filename"  href="file:///nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix" target="_top">
+/nix/store/0s46vlv8krpc6wfspxzsdfxlyhkp8m2k-source/modules/generic/meta-maintainers.nix
 </a></code>
 </td></tr>
 </table>
@@ -94240,6 +94447,113 @@ null or package</p>
 </dd>
 <dt>
  <span class="term">
+ <a id="opt-programs.uv.python.default"></a><a class="term" href="options.xhtml#opt-programs.uv.python.default"><code class="option">programs.uv.python.default</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Versions from <code class="option">programs.uv.python.versions</code> to set as default
+Python versions, each installed with
+<span class="command"><strong>uv python install --default</strong></span>.</p><p><span class="command"><strong>--default</strong></span> provides the unversioned executable for the
+request’s implementation, so defaults of different implementations do
+not conflict: a CPython request provides <span class="command"><strong>python</strong></span> and
+<span class="command"><strong>python3</strong></span>, a PyPy request provides <span class="command"><strong>pypy</strong></span> and
+<span class="command"><strong>pypy3</strong></span>, a GraalPy request provides <span class="command"><strong>graalpy</strong></span> and
+<span class="command"><strong>graalpy3</strong></span>. List one request per implementation to set them
+all. A bare string is accepted as a single-element list.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+(list of string) or string convertible to it</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  &quot;3.13&quot;
+  &quot;pypy@3.11&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/uv.nix" target="_top">
+&lt;home-manager/modules/programs/uv.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.uv.python.prune"></a><a class="term" href="options.xhtml#opt-programs.uv.python.prune"><code class="option">programs.uv.python.prune</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to make the set of managed Python versions fully declarative.</p><p>When enabled, <span class="command"><strong>uv python uninstall --all</strong></span> is run before
+installing <code class="option">programs.uv.python.versions</code>, so versions that are
+no longer listed are removed.</p><div class="warning"><h3 class="title">Warning</h3><p>uv has no declarative install command, so this uninstalls and
+reinstalls all listed versions on every activation, which is slow.
+Versions installed manually with <span class="command"><strong>uv python install</strong></span> are also
+removed.</p></div>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/uv.nix" target="_top">
+&lt;home-manager/modules/programs/uv.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.uv.python.versions"></a><a class="term" href="options.xhtml#opt-programs.uv.python.versions"><code class="option">programs.uv.python.versions</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Python versions to install with <code class="literal">uv python</code> during activation. Each
+entry is passed verbatim to <span class="command"><strong>uv python install</strong></span>, so any
+request it accepts works (e.g. <code class="literal">&quot;3.13&quot;</code>, <code class="literal">&quot;3.12.4&quot;</code>, <code class="literal">&quot;pypy@3.11&quot;</code>,
+<code class="literal">&quot;cpython-3.14.5+freethreaded&quot;</code>).</p><p>Entries without a patch component (e.g. <code class="literal">&quot;3.13&quot;</code>, <code class="literal">&quot;pypy@3.11&quot;</code>) are
+installed with <span class="command"><strong>--upgrade</strong></span>, so on every activation they track
+the latest patch release. Entries pinned to an exact patch (e.g.
+<code class="literal">&quot;3.12.4&quot;</code>) are installed as requested and never upgraded, since uv
+rejects upgrading them. See
+<a class="link" href="https://docs.astral.sh/uv/concepts/python-versions/"  target="_top">https://docs.astral.sh/uv/concepts/python-versions/</a> for more
+information.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  &quot;3.13&quot;
+  &quot;3.12&quot;
+  &quot;pypy@3.11&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/uv.nix" target="_top">
+&lt;home-manager/modules/programs/uv.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
  <a id="opt-programs.uv.settings"></a><a class="term" href="options.xhtml#opt-programs.uv.settings"><code class="option">programs.uv.settings</code>
   </a>
  </span>
@@ -94263,6 +94577,71 @@ TOML value</p>
   pip.index-url = &quot;https://test.pypi.org/simple&quot;;
 }
 
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/uv.nix" target="_top">
+&lt;home-manager/modules/programs/uv.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.uv.tool.packages"></a><a class="term" href="options.xhtml#opt-programs.uv.tool.packages"><code class="option">programs.uv.tool.packages</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Tools to install with <code class="literal">uv tool</code> during activation. Each entry is passed
+verbatim to <span class="command"><strong>uv tool install</strong></span>, so version specifiers and extras
+work (e.g. <code class="literal">&quot;black==24.1.0&quot;</code>, <code class="literal">&quot;poetry[plugin]&quot;</code>).</p><p>On every activation <span class="command"><strong>uv tool upgrade</strong></span> is run for the listed
+tools, which upgrades them to the latest version allowed by the
+constraints they were installed with (e.g. <code class="literal">&quot;black==24.1.0&quot;</code> stays
+pinned). Tools that are not listed are left untouched. See
+<a class="link" href="https://docs.astral.sh/uv/concepts/tools/"  target="_top">https://docs.astral.sh/uv/concepts/tools/</a> for more information.</p>
+
+<p><span class="emphasis"><em>Type:</em></span>
+list of string</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">[ ]
+</code></pre>
+
+<p><span class="emphasis"><em>Example:</em></span></p><pre><code class="programlisting nix">[
+  &quot;ruff&quot;
+  &quot;black==24.1.0&quot;
+  &quot;poetry[plugin]&quot;
+]
+</code></pre>
+
+<p><span class="emphasis"><em>Declared by:</em></span></p>
+<table border="0" summary="Simple list" class="simplelist">
+<tr><td>
+<code class="filename"><a class="filename"  href="https://github.com/nix-community/home-manager/blob/master/modules/programs/uv.nix" target="_top">
+&lt;home-manager/modules/programs/uv.nix&gt;
+</a></code>
+</td></tr>
+</table>
+</dd>
+<dt>
+ <span class="term">
+ <a id="opt-programs.uv.tool.prune"></a><a class="term" href="options.xhtml#opt-programs.uv.tool.prune"><code class="option">programs.uv.tool.prune</code>
+  </a>
+ </span>
+</dt>
+<dd>
+<p>Whether to make the set of installed tools fully declarative.</p><p>When enabled, <span class="command"><strong>uv tool uninstall --all</strong></span> is run before
+installing <code class="option">programs.uv.tool.packages</code>, so tools that are no
+longer listed are removed.</p><div class="warning"><h3 class="title">Warning</h3><p>uv has no declarative install command, so this uninstalls and
+reinstalls all listed tools on every activation, which is slow. Tools
+installed manually with <span class="command"><strong>uv tool install</strong></span> are also removed.</p></div>
+
+<p><span class="emphasis"><em>Type:</em></span>
+boolean</p>
+
+<p><span class="emphasis"><em>Default:</em></span></p><pre><code class="programlisting nix">false
 </code></pre>
 
 <p><span class="emphasis"><em>Declared by:</em></span></p>
