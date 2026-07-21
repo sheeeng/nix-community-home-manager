@@ -15,8 +15,8 @@
         <link rel="icon" href="../../../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../../../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../../../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../../../css/general-2459343d.css">
-        <link rel="stylesheet" href="../../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../../css/general-0392ca55.css">
+        <link rel="stylesheet" href="../../../css/chrome-fc474251.css">
         <link rel="stylesheet" href="../../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -35,10 +35,10 @@
             const path_to_root = "../../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../../searchindex-6283a9eb.js";
+            window.path_to_searchindex_js = "../../../searchindex-ab112b68.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../../toc-5e32c50d.js"></script>
+        <script src="../../../toc-a22c24be.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -267,14 +267,24 @@ null or strings concatenated with “\n” or absolute path</p>
 </ul>
 <h2 id="opt-programs.codex.hooks"><a class="header" href="#opt-programs.codex.hooks">programs.codex.hooks</a></h2>
 <p>Lifecycle hook events written to <code>CODEX_HOME/hooks.json</code>.</p>
-<p>This option uses the same event structure as
-<code>programs.codex.settings.hooks</code> and writes it under the
+<p>This option can either be a hook event attribute set, a path to a
+complete hooks JSON file, or a path to a hook bundle directory
+containing <code>hooks.json</code> and supporting hook scripts.</p>
+<p>Attribute set values use the same event structure as
+<code>programs.codex.settings.hooks</code> and are written under the
 top-level <code>hooks</code> key expected by Codex’s JSON hooks file.</p>
+<p>Directory values install <code>hooks.json</code> to
+<code>CODEX_HOME/hooks.json</code> and install the full directory to
+the active Codex home hooks directory. In the default layout, commands
+can reference bundled scripts with paths such as
+<code>$HOME/.codex/hooks/my-hook</code>. When
+<code>home.preferXdgDirectories</code> is enabled, use
+<code>$CODEX_HOME/hooks/my-hook</code>.</p>
 <p>Hooks can also be configured inline through
 <code>programs.codex.settings.hooks</code>; prefer using only one hook
 representation per layer.</p>
 <p><em>Type:</em>
-JSON value</p>
+JSON value or absolute path</p>
 <p><em>Default:</em></p>
 <pre><code class="language-nix">{ }
 </code></pre>
@@ -556,11 +566,11 @@ skills can coexist.</p>
 
         <script src="../../../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../../../mark-09e88c2c.min.js"></script>
-        <script src="../../../searcher-c2a407aa.js"></script>
+        <script src="../../../searcher-09f2665d.js"></script>
 
         <script src="../../../clipboard-1626706a.min.js"></script>
         <script src="../../../highlight-abc7f01d.js"></script>
-        <script src="../../../book-a0b12cfe.js"></script>
+        <script src="../../../book-c22b7243.js"></script>
 
         <!-- Custom JS scripts -->
 
