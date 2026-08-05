@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-d53f95b6.js";
+            window.path_to_searchindex_js = "searchindex-8759301f.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-a22c24be.js"></script>
+        <script src="toc-19723085.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -270,7 +270,7 @@ example, you should be able to successfully run a command like
 <code>nix-instantiate '&lt;nixpkgs&gt;' -A hello</code> without having to switch to
 the root user. For a multi-user install of Nix this means that your
 user must be covered by the
-<a href="https://nixos.org/nix/manual/#conf-allowed-users"><code>allowed-users</code></a>
+<a href="https://nix.dev/manual/nix/stable/command-ref/conf-file.html?highlight=allowed-user#conf-allowed-users"><code>allowed-users</code></a>
 Nix option. On NixOS you can control this option using the
 <a href="https://nixos.org/manual/nixos/stable/options.html#opt-nix.settings.allowed-users"><code>nix.settings.allowed-users</code></a>
 system option.</p>
@@ -9629,6 +9629,25 @@ attribute set of absolute path</p>
 <ul>
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix">&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;</a></li>
 </ul>
+<h2 id="opt-i18n.inputMethod.fcitx5.sessionVariables"><a class="header" href="#opt-i18n.inputMethod.fcitx5.sessionVariables">i18n.inputMethod.fcitx5.sessionVariables</a></h2>
+<p>The environment variables used to configure Fcitx5.</p>
+<p>The default values should be suitable for most desktop environments and should
+not normally need to be changed.</p>
+<p>If you need to override them, see the
+<a href="https://fcitx-im.org/wiki/Fcitx_5#For_Users">Fcitx5 user guide</a>.</p>
+<p><em>Type:</em>
+lazy attribute set of (null or string or absolute path or signed integer or floating point number or boolean)</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">{
+  GLFW_IM_MODULE = "ibus";
+  SDL_IM_MODULE = "fcitx";
+  XMODIFIERS = "@im=fcitx";
+}
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix">&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;</a></li>
+</ul>
 <h2 id="opt-i18n.inputMethod.fcitx5.settings.addons"><a class="header" href="#opt-i18n.inputMethod.fcitx5.settings.addons">i18n.inputMethod.fcitx5.settings.addons</a></h2>
 <p>The addon configures in <code>conf</code> folder in ini format with global sections.
 Each item is written to the corresponding file.</p>
@@ -9724,6 +9743,22 @@ open submodule of attribute set of section of an INI file (attrs of INI atom (nu
     Name = "pinyin";
   };
 }
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/i18n/input-method/fcitx5.nix">&lt;home-manager/modules/i18n/input-method/fcitx5.nix&gt;</a></li>
+</ul>
+<h2 id="opt-i18n.inputMethod.fcitx5.systemd.enable"><a class="header" href="#opt-i18n.inputMethod.fcitx5.systemd.enable">i18n.inputMethod.fcitx5.systemd.enable</a></h2>
+<p>Whether to enable the systemd user service.</p>
+<p>This service is not required if the desktop environment supports
+<a href="https://fcitx-im.org/wiki/Setup_Fcitx_5#XDG_Autostart">XDG Autostart</a>.</p>
+<p><em>Type:</em>
+boolean</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">true
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">true
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
@@ -11039,6 +11074,29 @@ one of “gui”, “user”</p>
 <ul>
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/launchd/default.nix">&lt;home-manager/modules/launchd/default.nix&gt;</a></li>
 </ul>
+<h2 id="opt-launchd.agents._name_.waitForNixStore"><a class="header" href="#opt-launchd.agents._name_.waitForNixStore">launchd.agents.&lt;name&gt;.waitForNixStore</a></h2>
+<p>Whether to start the agent through a <code>/bin/sh</code> wrapper that waits
+for the Nix store to be mounted before running the agent’s
+command. This guards against launchd starting the agent before
+the Nix store volume is available, for example early during login
+when the store volume is encrypted.</p>
+<p>When disabled, the agent’s command is run through a launcher
+script named after the agent instead. This makes the agent appear
+under its own name, rather than as “sh”, in System Settings &gt;
+Login Items &amp; Extensions, but the agent will fail to start if
+launchd runs it before the Nix store is mounted.</p>
+<p><em>Type:</em>
+boolean</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">true
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">false
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/launchd/default.nix">&lt;home-manager/modules/launchd/default.nix&gt;</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="lib"><a href="#lib" class="header">lib</a></h1>
 <h2 id="opt-lib"><a class="header" href="#opt-lib">lib</a></h2>
@@ -11120,7 +11178,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-meta.teams"><a class="header" href="#opt-meta.teams">meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -11135,7 +11193,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="news-1"><a href="#news-1" class="header">news</a></h1>
@@ -11815,6 +11873,7 @@ string</p>
 <li><a href="#bottom">bottom</a></li>
 <li><a href="#boxxy">boxxy</a></li>
 <li><a href="#brave">brave</a></li>
+<li><a href="#brave-origin">brave-origin</a></li>
 <li><a href="#broot">broot</a></li>
 <li><a href="#browserpass">browserpass</a></li>
 <li><a href="#btop">btop</a></li>
@@ -18235,6 +18294,25 @@ list of package</p>
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix">&lt;home-manager/modules/programs/chromium.nix&gt;</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div>
+<h1 id="brave-origin"><a href="#brave-origin" class="header">brave-origin</a></h1>
+<h2 id="opt-programs.brave-origin.nativeMessagingHosts"><a class="header" href="#opt-programs.brave-origin.nativeMessagingHosts">programs.brave-origin.nativeMessagingHosts</a></h2>
+<p>List of Brave Origin native messaging hosts to install.</p>
+<p><em>Type:</em>
+list of package</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">[ ]
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">[
+  pkgs.keepassxc
+]
+
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/chromium.nix">&lt;home-manager/modules/programs/chromium.nix&gt;</a></li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
 <h1 id="broot"><a href="#broot" class="header">broot</a></h1>
 <h2 id="opt-programs.broot.enable"><a class="header" href="#opt-programs.broot.enable">programs.broot.enable</a></h2>
 <p>Whether to enable Broot, a better way to navigate directories.</p>
@@ -23529,7 +23607,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.firefox.profiles._name_.bookmarks.meta.teams"><a class="header" href="#opt-programs.firefox.profiles._name_.bookmarks.meta.teams">programs.firefox.profiles.&lt;name&gt;.bookmarks.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -23544,7 +23622,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.firefox.profiles._name_.bookmarks.settings"><a class="header" href="#opt-programs.firefox.profiles._name_.bookmarks.settings">programs.firefox.profiles.&lt;name&gt;.bookmarks.settings</a></h2>
 <p>Custom bookmarks.</p>
@@ -23919,7 +23997,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.firefox.profiles._name_.handlers.meta.teams"><a class="header" href="#opt-programs.firefox.profiles._name_.handlers.meta.teams">programs.firefox.profiles.&lt;name&gt;.handlers.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -23934,7 +24012,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.firefox.profiles._name_.handlers.mimeTypes"><a class="header" href="#opt-programs.firefox.profiles._name_.handlers.mimeTypes">programs.firefox.profiles.&lt;name&gt;.handlers.mimeTypes</a></h2>
 <p>Attribute set mapping MIME types to their handler configurations.</p>
@@ -24327,7 +24405,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.firefox.profiles._name_.search.meta.teams"><a class="header" href="#opt-programs.firefox.profiles._name_.search.meta.teams">programs.firefox.profiles.&lt;name&gt;.search.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -24342,7 +24420,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.firefox.profiles._name_.search.order"><a class="header" href="#opt-programs.firefox.profiles._name_.search.order">programs.firefox.profiles.&lt;name&gt;.search.order</a></h2>
 <p>The order the search engines are listed in. Any engines that
@@ -24407,17 +24485,19 @@ attribute set of (Firefox preference (int, bool, string, and also attrs, list, f
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/firefox">&lt;home-manager/modules/programs/firefox&gt;</a></li>
 </ul>
 <h2 id="opt-programs.firefox.profiles._name_.storeId"><a class="header" href="#opt-programs.firefox.profiles._name_.storeId">programs.firefox.profiles.&lt;name&gt;.storeId</a></h2>
-<p>Store ID. Either null, or the first segment of a UUID string.</p>
-<p>If this value is set, then profile.ini is created
-with predictable StoreIDs.</p>
-<p>This is useful to keep the StoreID static,
-which helps to bridge the firefox profiles and the new
-firefox switchable profile implementations.</p>
-<p>This should be set to a string of 8 lowercase hex characters.</p>
+<p>Store ID. Either null, or the first segment of a UUID string (8 lowercase hex characters).</p>
+<p>If this value is set, then profiles.ini is created with predictable StoreIDs.
+‘toolkit.profiles.storeID’ is also set accordingly.</p>
+<p>A predictable StoreID helps bridge the old and new firefox profile implementations.
+The StoreID is the name of the sqlite database in “Profile Groups” holding the new
+profiles’ metadata.</p>
 <p><em>Type:</em>
 null or string matching the pattern [0-9a-f]{8}</p>
 <p><em>Default:</em></p>
 <pre><code class="language-nix">null
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">"e41de5fe"
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
@@ -25581,7 +25661,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.floorp.profiles._name_.bookmarks.meta.teams"><a class="header" href="#opt-programs.floorp.profiles._name_.bookmarks.meta.teams">programs.floorp.profiles.&lt;name&gt;.bookmarks.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -25596,7 +25676,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.floorp.profiles._name_.bookmarks.settings"><a class="header" href="#opt-programs.floorp.profiles._name_.bookmarks.settings">programs.floorp.profiles.&lt;name&gt;.bookmarks.settings</a></h2>
 <p>Custom bookmarks.</p>
@@ -25971,7 +26051,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.floorp.profiles._name_.handlers.meta.teams"><a class="header" href="#opt-programs.floorp.profiles._name_.handlers.meta.teams">programs.floorp.profiles.&lt;name&gt;.handlers.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -25986,7 +26066,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.floorp.profiles._name_.handlers.mimeTypes"><a class="header" href="#opt-programs.floorp.profiles._name_.handlers.mimeTypes">programs.floorp.profiles.&lt;name&gt;.handlers.mimeTypes</a></h2>
 <p>Attribute set mapping MIME types to their handler configurations.</p>
@@ -26379,7 +26459,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.floorp.profiles._name_.search.meta.teams"><a class="header" href="#opt-programs.floorp.profiles._name_.search.meta.teams">programs.floorp.profiles.&lt;name&gt;.search.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -26394,7 +26474,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.floorp.profiles._name_.search.order"><a class="header" href="#opt-programs.floorp.profiles._name_.search.order">programs.floorp.profiles.&lt;name&gt;.search.order</a></h2>
 <p>The order the search engines are listed in. Any engines that
@@ -26459,17 +26539,19 @@ attribute set of (Floorp preference (int, bool, string, and also attrs, list, fl
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/floorp.nix">&lt;home-manager/modules/programs/floorp.nix&gt;</a></li>
 </ul>
 <h2 id="opt-programs.floorp.profiles._name_.storeId"><a class="header" href="#opt-programs.floorp.profiles._name_.storeId">programs.floorp.profiles.&lt;name&gt;.storeId</a></h2>
-<p>Store ID. Either null, or the first segment of a UUID string.</p>
-<p>If this value is set, then profile.ini is created
-with predictable StoreIDs.</p>
-<p>This is useful to keep the StoreID static,
-which helps to bridge the firefox profiles and the new
-firefox switchable profile implementations.</p>
-<p>This should be set to a string of 8 lowercase hex characters.</p>
+<p>Store ID. Either null, or the first segment of a UUID string (8 lowercase hex characters).</p>
+<p>If this value is set, then profiles.ini is created with predictable StoreIDs.
+‘toolkit.profiles.storeID’ is also set accordingly.</p>
+<p>A predictable StoreID helps bridge the old and new firefox profile implementations.
+The StoreID is the name of the sqlite database in “Profile Groups” holding the new
+profiles’ metadata.</p>
 <p><em>Type:</em>
 null or string matching the pattern [0-9a-f]{8}</p>
 <p><em>Default:</em></p>
 <pre><code class="language-nix">null
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">"e41de5fe"
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
@@ -37154,7 +37236,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.librewolf.profiles._name_.bookmarks.meta.teams"><a class="header" href="#opt-programs.librewolf.profiles._name_.bookmarks.meta.teams">programs.librewolf.profiles.&lt;name&gt;.bookmarks.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -37169,7 +37251,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.librewolf.profiles._name_.bookmarks.settings"><a class="header" href="#opt-programs.librewolf.profiles._name_.bookmarks.settings">programs.librewolf.profiles.&lt;name&gt;.bookmarks.settings</a></h2>
 <p>Custom bookmarks.</p>
@@ -37544,7 +37626,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.librewolf.profiles._name_.handlers.meta.teams"><a class="header" href="#opt-programs.librewolf.profiles._name_.handlers.meta.teams">programs.librewolf.profiles.&lt;name&gt;.handlers.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -37559,7 +37641,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.librewolf.profiles._name_.handlers.mimeTypes"><a class="header" href="#opt-programs.librewolf.profiles._name_.handlers.mimeTypes">programs.librewolf.profiles.&lt;name&gt;.handlers.mimeTypes</a></h2>
 <p>Attribute set mapping MIME types to their handler configurations.</p>
@@ -37952,7 +38034,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.librewolf.profiles._name_.search.meta.teams"><a class="header" href="#opt-programs.librewolf.profiles._name_.search.meta.teams">programs.librewolf.profiles.&lt;name&gt;.search.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -37967,7 +38049,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.librewolf.profiles._name_.search.order"><a class="header" href="#opt-programs.librewolf.profiles._name_.search.order">programs.librewolf.profiles.&lt;name&gt;.search.order</a></h2>
 <p>The order the search engines are listed in. Any engines that
@@ -38032,17 +38114,19 @@ attribute set of (LibreWolf preference (int, bool, string, and also attrs, list,
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/librewolf.nix">&lt;home-manager/modules/programs/librewolf.nix&gt;</a></li>
 </ul>
 <h2 id="opt-programs.librewolf.profiles._name_.storeId"><a class="header" href="#opt-programs.librewolf.profiles._name_.storeId">programs.librewolf.profiles.&lt;name&gt;.storeId</a></h2>
-<p>Store ID. Either null, or the first segment of a UUID string.</p>
-<p>If this value is set, then profile.ini is created
-with predictable StoreIDs.</p>
-<p>This is useful to keep the StoreID static,
-which helps to bridge the firefox profiles and the new
-firefox switchable profile implementations.</p>
-<p>This should be set to a string of 8 lowercase hex characters.</p>
+<p>Store ID. Either null, or the first segment of a UUID string (8 lowercase hex characters).</p>
+<p>If this value is set, then profiles.ini is created with predictable StoreIDs.
+‘toolkit.profiles.storeID’ is also set accordingly.</p>
+<p>A predictable StoreID helps bridge the old and new firefox profile implementations.
+The StoreID is the name of the sqlite database in “Profile Groups” holding the new
+profiles’ metadata.</p>
 <p><em>Type:</em>
 null or string matching the pattern [0-9a-f]{8}</p>
 <p><em>Default:</em></p>
 <pre><code class="language-nix">null
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">"e41de5fe"
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
@@ -40580,6 +40664,36 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mise.nix">&lt;home-manager/modules/programs/mise.nix&gt;</a></li>
 </ul>
+<h2 id="opt-programs.mise.enableMutableConfig"><a class="header" href="#opt-programs.mise.enableMutableConfig">programs.mise.enableMutableConfig</a></h2>
+<p>Whether to leave <code>$XDG_CONFIG_HOME/mise/config.toml</code> mutable
+so it can be updated by commands such as <code>mise use --global</code>.</p>
+<p>When enabled, <code>programs.mise.globalConfig</code> is written to
+<code>$XDG_CONFIG_HOME/mise/conf.d/50-home-manager.toml</code> instead,
+leaving the main configuration file unmanaged. The numeric prefix
+gives user-managed fragments predictable ordering around the Home
+Manager fragment. An empty mutable configuration file is created
+because global Mise commands otherwise try to update an existing
+global fragment, including the read-only Home Manager fragment.</p>
+<p>Keep settings in the mutable file and
+<code>programs.mise.globalConfig</code> disjoint. Mise may resolve
+conflicts between the global file and <code>conf.d</code> differently
+depending on the current directory.</p>
+<p>Before disabling this option while
+<code>programs.mise.globalConfig</code> is non-empty, remove or back up
+the mutable configuration file. Home Manager otherwise treats it as a
+file collision.</p>
+<p><em>Type:</em>
+boolean</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">false
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">true
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mise.nix">&lt;home-manager/modules/programs/mise.nix&gt;</a></li>
+</ul>
 <h2 id="opt-programs.mise.enableNushellIntegration"><a class="header" href="#opt-programs.mise.enableNushellIntegration">programs.mise.enableNushellIntegration</a></h2>
 <p>Whether to enable Nushell integration.</p>
 <p><em>Type:</em>
@@ -40618,7 +40732,10 @@ null or package</p>
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/programs/mise.nix">&lt;home-manager/modules/programs/mise.nix&gt;</a></li>
 </ul>
 <h2 id="opt-programs.mise.globalConfig"><a class="header" href="#opt-programs.mise.globalConfig">programs.mise.globalConfig</a></h2>
-<p>Config written to <code>$XDG_CONFIG_HOME/mise/config.toml</code>.</p>
+<p>Global configuration written to
+<code>$XDG_CONFIG_HOME/mise/config.toml</code>, or
+<code>$XDG_CONFIG_HOME/mise/conf.d/50-home-manager.toml</code> when
+<code>programs.mise.enableMutableConfig</code> is enabled.</p>
 <p>See <a href="https://mise.jdx.dev/configuration.html">https://mise.jdx.dev/configuration.html</a> and
 <a href="https://mise.jdx.dev/configuration/settings.html">https://mise.jdx.dev/configuration/settings.html</a>
 for details on supported values.</p>
@@ -56009,7 +56126,7 @@ list of lib.maintainers</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.thunderbird.profiles._name_.search.meta.teams"><a class="header" href="#opt-programs.thunderbird.profiles._name_.search.meta.teams">programs.thunderbird.profiles.&lt;name&gt;.search.meta.teams</a></h2>
 <p>List of team maintainers of each module.
@@ -56024,7 +56141,7 @@ list of lib.teams</p>
 </code></pre>
 <p><em>Declared by:</em></p>
 <ul>
-<li><a href="file:///nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix">/nix/store/wwlv1b9k93rwcbdqxdbyfw3rs5i80f72-source/modules/generic/meta-maintainers.nix</a></li>
+<li><a href="file:///nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix">/nix/store/grir922ynsi1acqkrxm6ijxfp5xnwdha-source/modules/generic/meta-maintainers.nix</a></li>
 </ul>
 <h2 id="opt-programs.thunderbird.profiles._name_.search.order"><a class="header" href="#opt-programs.thunderbird.profiles._name_.search.order">programs.thunderbird.profiles.&lt;name&gt;.search.order</a></h2>
 <p>The order the search engines are listed in. Any engines that
@@ -63525,9 +63642,9 @@ strings concatenated with “\n”</p>
 <pre><code class="language-nix">""
 </code></pre>
 <p><em>Example:</em></p>
-<pre><code class="language-nix">lib.mkOrder 1200 '''
+<pre><code class="language-nix">lib.mkOrder 1200 ''
   echo "Hello zsh initContent!"
-''';
+'';
 
 </code></pre>
 <p><em>Declared by:</em></p>
@@ -85288,6 +85405,180 @@ boolean</p>
 <ul>
 <li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/labwc">&lt;home-manager/modules/services/window-managers/labwc&gt;</a></li>
 </ul>
+<h2 id="opt-wayland.windowManager.niri.enable"><a class="header" href="#opt-wayland.windowManager.niri.enable">wayland.windowManager.niri.enable</a></h2>
+<p>Whether to enable niri.</p>
+<p><em>Type:</em>
+boolean</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">false
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">true
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.package"><a class="header" href="#opt-wayland.windowManager.niri.package">wayland.windowManager.niri.package</a></h2>
+<p>The niri package to use. Set to <code>null</code> to not add any niri package to your path.</p>
+<p><em>Type:</em>
+null or package</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">pkgs.niri
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.checkConfig"><a class="header" href="#opt-wayland.windowManager.niri.checkConfig">wayland.windowManager.niri.checkConfig</a></h2>
+<p>If enabled and package is not null, validates the generated config file.</p>
+<p><em>Type:</em>
+boolean</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">wayland.windowManager.niri.package != null
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.extraConfig"><a class="header" href="#opt-wayland.windowManager.niri.extraConfig">wayland.windowManager.niri.extraConfig</a></h2>
+<p>Extra configuration lines added to <code>$XDG_CONFIG_HOME/niri/config.kdl</code> after the config generated from the options.</p>
+<p><em>Type:</em>
+strings concatenated with “\n”</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">""
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.extraConfigEarly"><a class="header" href="#opt-wayland.windowManager.niri.extraConfigEarly">wayland.windowManager.niri.extraConfigEarly</a></h2>
+<p>Extra configuration lines added to <code>$XDG_CONFIG_HOME/niri/config.kdl</code> before config generated from the options.</p>
+<p><em>Type:</em>
+strings concatenated with “\n”</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">""
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.portalPackage"><a class="header" href="#opt-wayland.windowManager.niri.portalPackage">wayland.windowManager.niri.portalPackage</a></h2>
+<p>The xdg-desktop-portal-gnome package to use. The portal implementation to use with niri. Niri ships a portal
+configuration that prefers <code>gnome</code> and <code>gtk</code> portals.
+Set to <code>null</code> to not install any portal package.</p>
+<p><em>Type:</em>
+null or package</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">pkgs.xdg-desktop-portal-gnome
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.settings"><a class="header" href="#opt-wayland.windowManager.niri.settings">wayland.windowManager.niri.settings</a></h2>
+<p>Configuration added to <code>$XDG_CONFIG_HOME/niri/config.kdl</code>.
+See <a href="https://yalter.github.io/niri/Configuration%3A-Introduction.html">https://yalter.github.io/niri/Configuration%3A-Introduction.html</a> for the full list of options.</p>
+<p><em>Type:</em>
+attribute set of (KDL value)</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">{ }
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">{
+  # str/num/bool → single argument
+  screenshot-path = "~/Screenshots/%Y-%m-%d %H-%M-%S.png";
+  layout.gaps = 8;
+  layout.shadow.draw-behind-window = true;
+
+  # {} → leaf node
+  prefer-no-csd = {};
+  input.touchpad.tap = {};
+
+  # _props → named properties: offset x=0 y=5
+  layout.shadow.offset._props = { x = 0; y = 5; };
+
+  # _children → ordered/repeated children
+  layout.preset-column-widths._children = [
+    { proportion = 0.33333; }
+    { proportion = 0.5; }
+  ];
+
+  # _props + list args in binds
+  binds = {
+    "Mod+H".focus-column-left = {};
+    "Mod+Return" = {
+      _props.hotkey-overlay-title = "Open a Terminal";
+      spawn = ["ghostty"];
+    };
+    "XF86AudioRaiseVolume" = {
+      _props.allow-when-locked = true;
+      spawn = ["wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"];
+    };
+  };
+
+  # _args for repeated/parameterized top-level nodes
+  _children = [
+    { workspace._args = ["chat"]; }
+    { workspace._args = ["dev"]; }
+    # _args + children
+    { output = { _args = ["eDP-1"]; scale = 2.0; }; }
+    # nested _children + _props
+    {
+      window-rule._children = [
+        { match._props = { app-id = "firefox"; at-startup = true; }; }
+        { open-on-workspace = "dev"; }
+      ];
+    }
+  ];
+}
+
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.systemd.enable"><a class="header" href="#opt-wayland.windowManager.niri.systemd.enable">wayland.windowManager.niri.systemd.enable</a></h2>
+<p>Whether to install niri’s systemd units from the <code>package</code>,
+that are used by <code>niri-session</code>.</p>
+<p><em>Type:</em>
+boolean</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">true
+</code></pre>
+<p><em>Example:</em></p>
+<pre><code class="language-nix">true
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.systemd.variables"><a class="header" href="#opt-wayland.windowManager.niri.systemd.variables">wayland.windowManager.niri.systemd.variables</a></h2>
+<p>Environment variables to be imported in the systemd &amp; D-Bus user
+environment. Not used by niri, as <code>niri-session</code> already
+imports all environment variables.</p>
+<p><em>Type:</em>
+list of string</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">[ ]
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
+<h2 id="opt-wayland.windowManager.niri.xwaylandSatellitePackage"><a class="header" href="#opt-wayland.windowManager.niri.xwaylandSatellitePackage">wayland.windowManager.niri.xwaylandSatellitePackage</a></h2>
+<p>The xwayland-satellite package to use. With <code>xwayland-satellite</code> in the <code>$PATH</code>, niri can automatically
+start XWayland when needed. Set to <code>null</code> if you want to disable xwayland.
+See <a href="https://yalter.github.io/niri/Xwayland.html">https://yalter.github.io/niri/Xwayland.html</a>.</p>
+<p><em>Type:</em>
+null or package</p>
+<p><em>Default:</em></p>
+<pre><code class="language-nix">pkgs.xwayland-satellite
+</code></pre>
+<p><em>Declared by:</em></p>
+<ul>
+<li><a href="https://github.com/nix-community/home-manager/blob/master/modules/services/window-managers/niri.nix">&lt;home-manager/modules/services/window-managers/niri.nix&gt;</a></li>
+</ul>
 <h2 id="opt-wayland.windowManager.river.enable"><a class="header" href="#opt-wayland.windowManager.river.enable">wayland.windowManager.river.enable</a></h2>
 <p>Whether to enable the river window manager.</p>
 <p><em>Type:</em>
@@ -91722,10 +92013,23 @@ session.</p>
 changes are only active if the <code>home.stateVersion</code> option is set to
 “26.11” or later.</p>
 <ul>
-<li>The KDL options under <code>programs.zellij</code> will now correctly escape backslashes
+<li>
+<p>The KDL options under <code>programs.zellij</code> will now correctly escape backslashes
 in string values. For example, the Nix string <code>"\\"</code> will now correctly
 generate the KDL string <code>"\\"</code>. Previously, this would have generated <code>"\"</code>,
-which is invalid KDL. The following options are affected:
+which is invalid KDL. The following options are affected:</p>
+<ul>
+<li><code>programs.zellij.settings</code></li>
+<li><code>programs.zellij.themes</code></li>
+<li><code>programs.zellij.layouts</code></li>
+</ul>
+</li>
+<li>
+<p>The KDL options under <code>programs.zellij</code> will now escape tabs in string
+values. For example, the Nix string <code>"\t"</code> (corresponding to a single tab)
+will now generate the KDL string <code>"\t"</code>. Previously, this would have generated
+<code>"&lt;tab&gt;"</code> (where <code>&lt;tab&gt;</code> denotes a literal tab character). The following
+options are affected:</p>
 <ul>
 <li><code>programs.zellij.settings</code></li>
 <li><code>programs.zellij.themes</code></li>
